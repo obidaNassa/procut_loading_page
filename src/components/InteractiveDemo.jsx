@@ -12,43 +12,14 @@ export default function InteractiveDemo() {
   const [selectedTime, setSelectedTime] = useState('11:30')
   const [booked, setBooked] = useState(false)
 
-  const servicesList = [
-    {
-      id: 0,
-      icon: '✂️',
-      name: lang === 'ar' ? 'قص شعر ملكي + تشذيب لحية' : lang === 'he' ? 'תספורת VIP + עיצוב זקן' : 'VIP Haircut & Beard',
-      duration: '45 min',
-      price: '₪90',
-    },
-    {
-      id: 1,
-      icon: '💅',
-      name: lang === 'ar' ? 'جل أظافر وباديكير احترافي' : lang === 'he' ? 'מניקור ג\'ל ובניית ציפורניים' : 'Gel Nails & Manicure',
-      duration: '60 min',
-      price: '₪140',
-    },
-    {
-      id: 2,
-      icon: '💆',
-      name: lang === 'ar' ? 'جلسة تنظيف وترطيب بشرة' : lang === 'he' ? 'טיפול פנים הידרציה והזנה' : 'Facial Cleansing & Glow',
-      duration: '50 min',
-      price: '₪180',
-    },
-  ]
-
-  const staffList = [
-    { id: 0, name: lang === 'ar' ? 'أحمد كمال (خبير حلاقة)' : lang === 'he' ? 'דניאל (ספר מומחה)' : 'Alex (Master Barber)', avatar: '💈' },
-    { id: 1, name: lang === 'ar' ? 'ريما سالم (أخصائية أظافر)' : lang === 'he' ? 'שני (מומחית ציפורניים)' : 'Emma (Nail Artist)', avatar: '💅' },
-    { id: 2, name: lang === 'ar' ? 'نور علي (أخصائية بشرة)' : lang === 'he' ? 'מאיה (קוסמטיקאית)' : 'Sophia (Esthetician)', avatar: '💆' },
-  ]
+  const servicesList = t.demo.services
+  const staffList = t.demo.staff
+  const feedItems = t.demo.feedItems
 
   const times = ['10:00', '11:30', '13:00', '15:15', '17:00', '18:30']
 
   const handleBooking = () => {
     setBooked(true)
-    setTimeout(() => {
-      // Keep booked state visible for feedback
-    }, 500)
   }
 
   return (
@@ -175,7 +146,7 @@ export default function InteractiveDemo() {
                       onClick={handleBooking}
                     >
                       <span>⚡</span>
-                      <span>{t.demo.clientConfirmBtn} ({servicesList[selectedService].price})</span>
+                      <span>{t.demo.clientConfirmBtn} ({servicesList[selectedService]?.price || '₪89.99'})</span>
                     </button>
                   </div>
                 ) : (
@@ -186,15 +157,15 @@ export default function InteractiveDemo() {
                     <div className={styles.successCard}>
                       <div className={styles.successRow}>
                         <span>{lang === 'ar' ? 'الخدمة:' : lang === 'he' ? 'שירות:' : 'Service:'}</span>
-                        <strong>{servicesList[selectedService].name}</strong>
+                        <strong>{servicesList[selectedService]?.name}</strong>
                       </div>
                       <div className={styles.successRow}>
                         <span>{lang === 'ar' ? 'مقدم الخدمة:' : lang === 'he' ? 'איש צוות:' : 'Specialist:'}</span>
-                        <strong>{staffList[selectedStaff].name}</strong>
+                        <strong>{staffList[selectedStaff]?.name}</strong>
                       </div>
                       <div className={styles.successRow}>
                         <span>{lang === 'ar' ? 'الوقت:' : lang === 'he' ? 'שעה:' : 'Time:'}</span>
-                        <strong>اليوم الساعة {selectedTime}</strong>
+                        <strong>{t.demo.clientBookedAt} {selectedTime}</strong>
                       </div>
                       <div className={styles.successRow}>
                         <span>{lang === 'ar' ? 'الحالة:' : lang === 'he' ? 'סטטוס:' : 'Status:'}</span>
@@ -238,8 +209,8 @@ export default function InteractiveDemo() {
                 </div>
                 <div className={styles.kpiCard}>
                   <span className={styles.kpiIcon}>💰</span>
-                  <div className={styles.kpiVal}>₪2,450</div>
-                  <div className={styles.kpiLbl}>{t.demo.salonRevenue}</div>
+                  <div className={styles.kpiVal}>{t.demo.salonRevenue}</div>
+                  <div className={styles.kpiLbl}>{lang === 'ar' ? 'إيراد اليوم' : lang === 'he' ? 'הכנסה יומית' : 'Revenue'}</div>
                 </div>
                 <div className={styles.kpiCard}>
                   <span className={styles.kpiIcon}>⏳</span>
@@ -257,45 +228,19 @@ export default function InteractiveDemo() {
               <div className={styles.scheduleBox}>
                 <h4 className={styles.scheduleTitle}>{t.demo.salonLiveFeed}</h4>
                 <div className={styles.appointmentList}>
-                  <div className={styles.dashAppItem}>
-                    <span className={styles.dashAppTime}>10:00</span>
-                    <div className={styles.dashAppClient}>
-                      <strong>سارة النجار</strong>
-                      <span>تنظيف بشرة ملكي (نور علي)</span>
+                  {feedItems.map((item, i) => (
+                    <div key={i} className={styles.dashAppItem}>
+                      <span className={styles.dashAppTime}>{item.time}</span>
+                      <div className={styles.dashAppClient}>
+                        <strong>{item.client}</strong>
+                        <span>{item.service}</span>
+                      </div>
+                      <span className={item.status === 'confirmed' ? styles.badgeSuccess : styles.badgeWarning}>
+                        {item.status === 'confirmed' ? `✓ ${t.demo.salonConfirmed}` : `⏳ ${t.demo.salonPending}`}
+                      </span>
+                      <span className={styles.dashAppPrice}>{item.price}</span>
                     </div>
-                    <span className={styles.badgeSuccess}>✓ {t.demo.salonConfirmed}</span>
-                    <span className={styles.dashAppPrice}>₪180</span>
-                  </div>
-
-                  <div className={styles.dashAppItem}>
-                    <span className={styles.dashAppTime}>11:30</span>
-                    <div className={styles.dashAppClient}>
-                      <strong>أدهم منصور</strong>
-                      <span>قص شعر ولحية VIP (أحمد كمال)</span>
-                    </div>
-                    <span className={styles.badgeSuccess}>✓ {t.demo.salonConfirmed}</span>
-                    <span className={styles.dashAppPrice}>₪90</span>
-                  </div>
-
-                  <div className={styles.dashAppItem}>
-                    <span className={styles.dashAppTime}>12:45</span>
-                    <div className={styles.dashAppClient}>
-                      <strong>دينا خليل</strong>
-                      <span>جل أظافر وباديكير (ريما سالم)</span>
-                    </div>
-                    <span className={styles.badgeWarning}>⏳ {t.demo.salonPending}</span>
-                    <span className={styles.dashAppPrice}>₪140</span>
-                  </div>
-
-                  <div className={styles.dashAppItem}>
-                    <span className={styles.dashAppTime}>14:00</span>
-                    <div className={styles.dashAppClient}>
-                      <strong>رامي سعادة</strong>
-                      <span>تصميم لحية ملكي (أحمد كمال)</span>
-                    </div>
-                    <span className={styles.badgeSuccess}>✓ {t.demo.salonConfirmed}</span>
-                    <span className={styles.dashAppPrice}>₪70</span>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>

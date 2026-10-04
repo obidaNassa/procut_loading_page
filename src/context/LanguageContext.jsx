@@ -4,13 +4,12 @@ import { translations } from '../translations/translations'
 const LanguageContext = createContext()
 
 export function LanguageProvider({ children }) {
-  // Default to Arabic or Hebrew (user started with Arabic prompt, Hebrew in image/original)
-  // Let's set 'ar' by default or persist in localStorage
+  // Default to Hebrew as requested by user
   const [lang, setLang] = useState(() => {
-    return localStorage.getItem('procut_lang') || 'ar'
+    return localStorage.getItem('procut_lang') || 'he'
   })
 
-  const t = translations[lang] || translations.ar
+  const t = translations[lang] || translations.he
 
   useEffect(() => {
     localStorage.setItem('procut_lang', lang)

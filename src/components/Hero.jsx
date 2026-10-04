@@ -133,32 +133,25 @@ export default function Hero() {
               <span className={styles.mockupTitle}>ProCut Salon Dashboard</span>
             </div>
             <div className={styles.mockupBody}>
-              <div className={styles.mockupAppointment}>
-                <div className={styles.mockupAvatar} style={{ background: 'linear-gradient(135deg,#6366f1,#06b6d4)' }}>س</div>
-                <div className={styles.mockupInfo}>
-                  <div className={styles.mockupName}>سارة أحمد</div>
-                  <div className={styles.mockupService}>تنظيف بشرة VIP + ماسك</div>
-                </div>
-                <div className={styles.mockupTime}>10:30</div>
-              </div>
-
-              <div className={styles.mockupAppointment}>
-                <div className={styles.mockupAvatar} style={{ background: 'linear-gradient(135deg,#f43f5e,#fb923c)' }}>م</div>
-                <div className={styles.mockupInfo}>
-                  <div className={styles.mockupName}>ميخائيل ليفي</div>
-                  <div className={styles.mockupService}>تصميم لحية وقصة ملكية</div>
-                </div>
-                <div className={styles.mockupTime}>11:15</div>
-              </div>
-
-              <div className={styles.mockupAppointment}>
-                <div className={styles.mockupAvatar} style={{ background: 'linear-gradient(135deg,#22d3ee,#6366f1)' }}>ل</div>
-                <div className={styles.mockupInfo}>
-                  <div className={styles.mockupName}>ليان خوري</div>
-                  <div className={styles.mockupService}>جل أظافر وباديكير فرنسي</div>
-                </div>
-                <div className={styles.mockupTime}>12:00</div>
-              </div>
+              {t.hero.mockupAppointments.map((app, i) => {
+                const gradients = [
+                  'linear-gradient(135deg,#6366f1,#06b6d4)',
+                  'linear-gradient(135deg,#f43f5e,#fb923c)',
+                  'linear-gradient(135deg,#22d3ee,#6366f1)',
+                ]
+                return (
+                  <div key={i} className={styles.mockupAppointment}>
+                    <div className={styles.mockupAvatar} style={{ background: gradients[i % 3] }}>
+                      {app.initial}
+                    </div>
+                    <div className={styles.mockupInfo}>
+                      <div className={styles.mockupName}>{app.name}</div>
+                      <div className={styles.mockupService}>{app.service}</div>
+                    </div>
+                    <div className={styles.mockupTime}>{app.time}</div>
+                  </div>
+                )
+              })}
 
               <div className={styles.mockupStats}>
                 <div className={styles.mockupStat}>
@@ -166,7 +159,7 @@ export default function Hero() {
                   <span className={styles.mockupStatLbl}>{t.lang === 'ar' ? 'مواعيد اليوم' : t.lang === 'he' ? 'תורים היום' : 'Today'}</span>
                 </div>
                 <div className={styles.mockupStat}>
-                  <span className={styles.mockupStatNum}>₪1,850</span>
+                  <span className={styles.mockupStatNum}>{t.hero.todayRevenue}</span>
                   <span className={styles.mockupStatLbl}>{t.lang === 'ar' ? 'الإيراد' : t.lang === 'he' ? 'הכנסה' : 'Revenue'}</span>
                 </div>
                 <div className={styles.mockupStat}>

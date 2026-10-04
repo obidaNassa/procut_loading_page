@@ -20,9 +20,9 @@ export default function Pricing() {
   ]
 
   const staffTiers = [
-    { label: t.pricing.staffOption1, price: '120' },
-    { label: t.pricing.staffOption2, price: '160' },
-    { label: t.pricing.staffOption3, price: '200' },
+    { label: t.pricing.staffOption1, price: '119.99' },
+    { label: t.pricing.staffOption2, price: '159.99' },
+    { label: t.pricing.staffOption3, price: '199.99' },
   ]
 
   const waBaseUrl = (planTitle) => {

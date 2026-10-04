@@ -39,15 +39,15 @@ export default function DeepDive() {
             <div className={styles.sampleNotif}>
               <div className={styles.sampleNotifHeader}>
                 <span className={styles.sampleNotifLogo}>✂️ ProCut</span>
-                <span className={styles.sampleNotifTime}>الآن</span>
+                <span className={styles.sampleNotifTime}>{t.deepDive.sampleNotifTime}</span>
               </div>
               <div className={styles.sampleNotifBody}>
-                <strong>تذكير بموعدك غداً الساعة 14:00 في صالون رويال</strong>
-                <p>اضغط لتأكيد الحضور بنقرة واحدة أو طلب إعادة جدولة.</p>
+                <strong>{t.deepDive.sampleNotifTitle}</strong>
+                <p>{t.deepDive.sampleNotifDesc}</p>
               </div>
               <div className={styles.sampleNotifActions}>
-                <button type="button" className={styles.notifBtnConfirm}>✓ تأكيد الموعد</button>
-                <button type="button" className={styles.notifBtnReschedule}>تعديل الموعد</button>
+                <button type="button" className={styles.notifBtnConfirm}>{t.deepDive.sampleNotifConfirm}</button>
+                <button type="button" className={styles.notifBtnReschedule}>{t.deepDive.sampleNotifReschedule}</button>
               </div>
             </div>
           </div>
@@ -65,17 +65,17 @@ export default function DeepDive() {
             <div className={styles.flowBox}>
               <div className={styles.flowStep}>
                 <span className={styles.flowStepNum}>1</span>
-                <span>إلغاء طارئ لموعد الساعة 16:00</span>
+                <span>{t.deepDive.flowStep1}</span>
               </div>
               <div className={styles.flowArrow}>↓</div>
               <div className={styles.flowStep}>
                 <span className={styles.flowStepNum}>2</span>
-                <span>فحص ذكي للزبائن المسجلين في قائمة الانتظار</span>
+                <span>{t.deepDive.flowStep2}</span>
               </div>
               <div className={styles.flowArrow}>↓</div>
               <div className={`${styles.flowStep} ${styles.flowSuccess}`}>
                 <span className={styles.flowStepNum}>3</span>
-                <span>إشعار أول زبون في القائمة وحجز المقعد في دقيقة!</span>
+                <span>{t.deepDive.flowStep3}</span>
               </div>
             </div>
           </div>
@@ -94,16 +94,16 @@ export default function DeepDive() {
               <div className={styles.roleItem}>
                 <span className={styles.roleAvatar}>👑</span>
                 <div className={styles.roleInfo}>
-                  <strong>صاحب الصالון / المدير</strong>
-                  <span>تحكم كامل، تقارير مالية، صلاحيات الأسعار</span>
+                  <strong>{t.deepDive.roleOwnerTitle}</strong>
+                  <span>{t.deepDive.roleOwnerDesc}</span>
                 </div>
               </div>
               <div className={styles.roleDivider} />
               <div className={styles.roleItem}>
                 <span className={styles.roleAvatar}>✂️</span>
                 <div className={styles.roleInfo}>
-                  <strong>مصفف الشعر / الخبيرة</strong>
-                  <span>مشاهدة المواعيد الشخصية، استلام الإشعارات</span>
+                  <strong>{t.deepDive.roleStaffTitle}</strong>
+                  <span>{t.deepDive.roleStaffDesc}</span>
                 </div>
               </div>
             </div>
