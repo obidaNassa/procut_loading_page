@@ -1,14 +1,14 @@
 .section {
   position: relative;
   padding: 60px 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 40%, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
   width: 100%;
   overflow: hidden;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .badge {
@@ -16,22 +16,22 @@
 }
 
 .title {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .subtitle {
   margin: 0 auto;
-  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
-  padding: 0 4px;
-  max-width: 650px;
+  font-size: clamp(0.92rem, 2.5vw, 1.05rem);
+  padding: 0 8px;
+  max-width: 680px;
   color: var(--text-secondary);
 }
 
 /* 8 Live Salons Selector Pills */
 .salonSelectorWrapper {
-  max-width: 960px;
-  margin: 0 auto 24px;
-  padding: 0 10px;
+  max-width: 1050px;
+  margin: 0 auto 28px;
+  padding: 0 12px;
   box-sizing: border-box;
 }
 
@@ -39,7 +39,7 @@
   display: flex;
   gap: 10px;
   overflow-x: auto;
-  padding: 4px 4px 12px;
+  padding: 6px 4px 14px;
   scrollbar-width: thin;
   scrollbar-color: rgba(99, 102, 241, 0.3) transparent;
   -webkit-overflow-scrolling: touch;
@@ -58,22 +58,22 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 14px;
-  background: rgba(20, 20, 42, 0.7);
+  padding: 9px 16px;
+  background: rgba(18, 20, 36, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
+  border-radius: 16px;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   color: inherit;
   white-space: nowrap;
   flex-shrink: 0;
   text-align: inherit;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
 }
 
 .salonPill:hover {
-  background: rgba(30, 30, 60, 0.85);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(28, 30, 56, 0.9);
+  border-color: rgba(255, 255, 255, 0.22);
   transform: translateY(-2px);
 }
 
@@ -82,90 +82,126 @@
 }
 
 .salonPillIcon {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   flex-shrink: 0;
 }
 
 .salonPillText {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .salonPillName {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 800;
   color: #ffffff;
 }
 
 .salonPillTag {
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: #94a3b8;
   font-weight: 500;
 }
 
-/* Phone Screen Frame - COMPACT & FIXED HEIGHT */
+/* REAL SMARTPHONE FRAME - Accurate Modern Smartphone Proportions */
 .screenWrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  padding: 10px 0;
 }
 
 .phoneFrame {
   width: 100%;
-  max-width: 410px;
-  height: 560px;
-  max-height: 560px;
-  background: #090a16;
-  border: 4px solid rgba(255, 255, 255, 0.12);
-  border-radius: 36px;
-  padding: 8px;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8), 0 0 45px var(--s-glow, rgba(99, 102, 241, 0.25));
+  max-width: 375px;
+  height: 700px;
+  max-height: 700px;
+  background: #0b0d14;
+  border: 4px solid #232734;
+  border-radius: 46px;
+  padding: 10px 8px 8px;
+  box-shadow: 
+    0 25px 80px -10px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 50px -5px var(--s-glow, rgba(99, 102, 241, 0.25));
   position: relative;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.4s ease;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  user-select: none;
 }
 
-.phoneSpeaker {
-  width: 50px;
+/* Dynamic Island Notch */
+.dynamicIsland {
+  width: 96px;
+  height: 22px;
+  background: #000000;
+  border-radius: 20px;
+  margin: 0 auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 8px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.notchCamera {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Smartphone Bottom Home Bar */
+.homeIndicatorBar {
+  width: 120px;
   height: 4px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.35);
   border-radius: 4px;
-  margin: 4px auto 8px;
+  margin: 6px auto 2px;
   flex-shrink: 0;
 }
 
-/* Internal Scrollable Screen */
+/* Scrollable Smartphone Screen */
 .phoneScreen {
-  background: var(--s-bg, #0f1022);
-  border-radius: 26px;
+  background: var(--s-bg, #0c1017);
+  border-radius: 34px;
   overflow-y: auto;
   overflow-x: hidden;
-  border: 1px solid var(--s-border, rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--s-border, rgba(255, 255, 255, 0.06));
   position: relative;
   display: flex;
   flex-direction: column;
   flex: 1;
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: var(--s-primary, #6366f1) transparent;
+  scrollbar-color: var(--s-primary, #2979ff) transparent;
   transition: background-color 0.35s ease, border-color 0.35s ease;
+  user-select: auto;
 }
 
 .phoneScreen::-webkit-scrollbar {
-  width: 5px;
+  width: 4px;
+}
+
+.phoneScreen::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .phoneScreen::-webkit-scrollbar-thumb {
-  background: var(--s-primary, #6366f1);
+  background: var(--s-primary, #2979ff);
   border-radius: 4px;
 }
 
-/* ProCut Cover Area */
+/* CLEAN Cover Area - ZERO text on top of image */
 .coverArea {
   position: relative;
-  height: 165px;
+  height: 180px;
   width: 100%;
   flex-shrink: 0;
   overflow: hidden;
@@ -176,407 +212,446 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
 }
 
 .coverGradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.2) 40%, var(--s-bg, #0f1022) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.1) 40%,
+    var(--s-bg, #0c1017) 100%
+  );
+  pointer-events: none;
 }
 
+/* Top App Nav Buttons */
 .topAppNav {
   position: absolute;
-  top: 8px;
-  left: 10px;
-  right: 10px;
+  top: 10px;
+  left: 12px;
+  right: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 5;
 }
 
-.appMenuIcon {
-  width: 26px;
-  height: 26px;
+.circleMenuBtn {
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3px;
-}
-
-.appMenuIcon span {
-  display: block;
-  width: 11px;
-  height: 1.5px;
-  background: #ffffff;
-  border-radius: 1px;
-}
-
-.liveIndicator {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(8px);
-  padding: 3px 9px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 0.66rem;
   color: #ffffff;
-  font-weight: 700;
-}
-
-.liveDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--s-primary, #10b981);
-  box-shadow: 0 0 8px var(--s-primary, #10b981);
-  animation: pulseDot 2s infinite;
-}
-
-@keyframes pulseDot {
-  0% { transform: scale(0.9); opacity: 0.8; }
-  50% { transform: scale(1.3); opacity: 1; }
-  100% { transform: scale(0.9); opacity: 0.8; }
-}
-
-.directLiveLink {
-  position: absolute;
-  bottom: 8px;
-  inset-inline-start: 10px;
-  background: var(--s-primary, #6366f1);
-  color: #ffffff;
-  font-size: 0.68rem;
-  font-weight: 800;
-  padding: 4px 10px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  text-decoration: none;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
   transition: all 0.2s;
-  z-index: 5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.directLiveLink:hover {
-  filter: brightness(1.15);
-  transform: translateY(-1px);
+.circleMenuBtn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.05);
 }
 
 /* Salon Profile Info */
 .salonProfile {
   position: relative;
-  padding: 0 14px 12px;
+  padding: 0 16px 14px;
   z-index: 10;
-  margin-top: -30px;
+  margin-top: -36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   flex-shrink: 0;
 }
 
 .logoHalo {
-  width: 58px;
-  height: 58px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
-  background: var(--s-card, #14152e);
-  border: 3px solid var(--s-bg, #0f1022);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 0 2px var(--s-primary, #6366f1);
+  background: var(--s-card, #121824);
+  border: 3px solid var(--s-bg, #0c1017);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.6),
+    0 0 0 2px var(--s-primary, #2979ff);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6px;
-  transition: all 0.3s;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
 }
 
 .logoAvatar {
-  font-size: 1.6rem;
+  font-size: 1.85rem;
 }
 
 .profileText {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .salonTitle {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 900;
   color: #ffffff;
-  line-height: 1.2;
-}
-
-.salonTagBadge {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--s-primary, #38bdf8);
-  width: fit-content;
+  line-height: 1.25;
+  margin: 0;
 }
 
 .salonBio {
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   color: #94a3b8;
   line-height: 1.4;
-  margin: 2px 0 0;
+  margin: 3px 0 0;
+  max-width: 290px;
 }
 
-.socialBar {
-  display: flex;
-  gap: 6px;
-}
-
-.socialBtn {
+.locationRow {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 4px 8px;
-  border-radius: 16px;
-  text-decoration: none;
-  transition: all 0.2s;
+  font-size: 0.72rem;
+  color: var(--s-primary, #38bdf8);
+  margin-top: 4px;
+  font-weight: 600;
 }
 
-.socialWhatsApp {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+.pinIcon {
+  color: var(--s-primary, #38bdf8);
 }
 
-.socialWaze {
-  background: rgba(56, 189, 248, 0.15);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-}
-
-.socialInstagram {
-  background: rgba(236, 72, 153, 0.15);
-  color: #f472b6;
-  border: 1px solid rgba(236, 72, 153, 0.3);
-}
-
-/* Scroll Down Interactive Hint */
-.scrollDownHint {
-  margin: 0 12px 10px;
-  padding: 6px 10px;
-  border-radius: 10px;
-  background: var(--s-badge-bg, rgba(255, 255, 255, 0.05));
-  border: 1px dashed var(--s-border, rgba(255, 255, 255, 0.15));
+/* Social Circles Row - Exactly like ProCut Live */
+.socialCirclesRow {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--s-primary, #a5b4fc);
-  cursor: pointer;
-  animation: pulseHint 2s infinite ease-in-out;
-  flex-shrink: 0;
+  gap: 12px;
+  margin-top: 4px;
 }
 
-.scrollArrow {
-  font-size: 0.85rem;
-  animation: bounceArrow 1.2s infinite ease-in-out;
+.socialCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@keyframes bounceArrow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(3px); }
+.socialCircle:hover {
+  transform: translateY(-2px) scale(1.08);
 }
 
-@keyframes pulseHint {
-  0%, 100% { opacity: 0.85; }
-  50% { opacity: 1; filter: brightness(1.2); }
+.circleWhatsApp {
+  background: rgba(37, 211, 102, 0.16);
+  color: #25d366;
+  border-color: rgba(37, 211, 102, 0.35);
+}
+
+.circleWhatsApp:hover {
+  background: rgba(37, 211, 102, 0.28);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+.circleWaze {
+  background: rgba(51, 204, 255, 0.16);
+  color: #33ccff;
+  border-color: rgba(51, 204, 255, 0.35);
+}
+
+.circleWaze:hover {
+  background: rgba(51, 204, 255, 0.28);
+  box-shadow: 0 4px 14px rgba(51, 204, 255, 0.35);
+}
+
+.circleInstagram {
+  background: rgba(225, 48, 108, 0.16);
+  color: #e1306c;
+  border-color: rgba(225, 48, 108, 0.35);
+}
+
+.circleInstagram:hover {
+  background: rgba(225, 48, 108, 0.28);
+  box-shadow: 0 4px 14px rgba(225, 48, 108, 0.35);
+}
+
+.circleTikTok {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.circleTikTok:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.3);
 }
 
 /* Booking Flow Sections */
 .bookingContainer {
-  padding: 0 12px 16px;
+  padding: 0 14px 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .stepSection {
-  background: var(--s-card, rgba(255, 255, 255, 0.025));
+  background: var(--s-card, #121824);
   border: 1px solid var(--s-border, rgba(255, 255, 255, 0.08));
-  border-radius: 14px;
-  padding: 10px;
+  border-radius: 18px;
+  padding: 12px;
 }
 
-.stepHeaderRow {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 8px;
+.sectionHeader {
+  margin-bottom: 10px;
 }
 
-.stepNumber {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--s-badge-bg, rgba(99, 102, 241, 0.2));
-  border: 1px solid var(--s-primary, #818cf8);
-  color: var(--s-primary, #818cf8);
-  font-size: 0.65rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.stepTitle {
-  font-size: 0.82rem;
+.procutSectionTitle {
+  font-size: 0.95rem;
   font-weight: 800;
   color: #ffffff;
+  margin: 0 0 2px;
 }
 
-/* Staff Row */
-.staffRow {
+.primaryAccent {
+  color: var(--s-primary, #2979ff);
+}
+
+.procutSectionSubtitle {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Staff Grid */
+.staffGrid {
   display: flex;
-  gap: 6px;
+  gap: 10px;
   overflow-x: auto;
-  padding-bottom: 2px;
+  padding: 2px 2px 6px;
   scrollbar-width: none;
 }
 
-.staffRow::-webkit-scrollbar {
+.staffGrid::-webkit-scrollbar {
   display: none;
 }
 
 .staffCard {
   flex: 1;
-  min-width: 80px;
+  min-width: 82px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
-  padding: 7px 4px;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
+  gap: 6px;
+  padding: 8px 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   color: inherit;
   box-sizing: border-box;
 }
 
 .staffCard:hover {
-  background: var(--s-badge-bg, rgba(99, 102, 241, 0.1));
+  background: var(--s-badge-bg, rgba(99, 102, 241, 0.12));
   border-color: var(--s-primary, rgba(99, 102, 241, 0.3));
 }
 
 .staffCardActive {
-  background: var(--s-badge-bg, rgba(99, 102, 241, 0.25)) !important;
-  border-color: var(--s-primary, #6366f1) !important;
-  box-shadow: 0 0 12px var(--s-glow, rgba(99, 102, 241, 0.35));
+  background: var(--s-badge-bg, rgba(41, 121, 255, 0.18)) !important;
+  border-color: var(--s-primary, #2979ff) !important;
+  box-shadow: 0 0 14px var(--s-glow, rgba(41, 121, 255, 0.3));
 }
 
-.staffAvatarCircle {
-  width: 34px;
-  height: 34px;
+.staffAvatarHalo {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  transition: all 0.2s;
+}
+
+.staffAvatarActive {
+  border-color: var(--s-primary, #2979ff);
+  background: var(--s-badge-bg, rgba(41, 121, 255, 0.25));
 }
 
 .staffName {
-  font-size: 0.74rem;
-  font-weight: 800;
+  font-size: 0.76rem;
+  font-weight: 700;
   color: #ffffff;
   text-align: center;
 }
 
-.staffRole {
-  font-size: 0.62rem;
-  color: #94a3b8;
-  text-align: center;
-}
-
-/* Services List */
-.servicesList {
+/* Services Grid */
+.servicesGrid {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .serviceCard {
-  padding: 8px 10px;
+  padding: 10px 12px;
   background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  text-align: inherit;
+  color: inherit;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .serviceCard:hover {
-  background: var(--s-badge-bg, rgba(99, 102, 241, 0.08));
+  background: var(--s-badge-bg, rgba(99, 102, 241, 0.1));
   border-color: var(--s-border, rgba(99, 102, 241, 0.25));
 }
 
 .serviceCardActive {
-  background: var(--s-badge-bg, rgba(99, 102, 241, 0.18)) !important;
-  border-color: var(--s-primary, #6366f1) !important;
-  box-shadow: 0 0 10px var(--s-glow, rgba(99, 102, 241, 0.2));
+  background: var(--s-badge-bg, rgba(41, 121, 255, 0.16)) !important;
+  border-color: var(--s-primary, #2979ff) !important;
+  box-shadow: 0 0 12px var(--s-glow, rgba(41, 121, 255, 0.25));
 }
 
-.serviceMain {
+.serviceTopRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6px;
+  gap: 8px;
 }
 
-.serviceNameRow {
+.serviceMetaGroup {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
-.serviceIcon {
-  font-size: 0.95rem;
+.serviceIconBox {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--s-badge-bg, rgba(41, 121, 255, 0.15));
+  color: var(--s-primary, #2979ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .serviceName {
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.84rem;
+  font-weight: 800;
   color: #ffffff;
-  display: block;
+  line-height: 1.2;
 }
 
 .serviceTime {
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   color: #94a3b8;
-  display: block;
+  margin-top: 1px;
 }
 
 .servicePrice {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 900;
-  color: var(--s-primary, #38bdf8);
+  color: var(--s-primary, #2979ff);
+  white-space: nowrap;
 }
 
 .serviceDesc {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   color: #94a3b8;
   line-height: 1.35;
-  margin: 3px 0 0;
+  margin: 4px 0 0;
 }
 
-/* Date & Time */
+/* Step 3: Date & Time Picker Card */
+.bookingCard {
+  background: var(--s-card, #121824);
+  border: 1px solid var(--s-border, rgba(255, 255, 255, 0.08));
+  border-radius: 18px;
+  padding: 12px;
+}
+
+.bookingCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.cardHeaderIcon {
+  color: var(--s-primary, #2979ff);
+}
+
+.bookingCardTitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Month Navigation */
+.monthNavRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+
+.arrowBtn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 8px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.arrowBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.monthLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Date Chips Carousel */
 .dateChipsRow {
   display: flex;
-  gap: 5px;
-  margin-bottom: 7px;
+  gap: 6px;
+  margin-bottom: 12px;
 }
 
 .dateChip {
@@ -584,43 +659,61 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5px 3px;
-  background: rgba(255, 255, 255, 0.035);
+  padding: 6px 4px;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   color: inherit;
   transition: all 0.2s;
 }
 
 .dateChipActive {
-  background: var(--s-badge-bg, rgba(99, 102, 241, 0.25)) !important;
-  border-color: var(--s-primary, #6366f1) !important;
+  background: var(--s-badge-bg, rgba(41, 121, 255, 0.2)) !important;
+  border-color: var(--s-primary, #2979ff) !important;
+  box-shadow: 0 0 10px var(--s-glow, rgba(41, 121, 255, 0.25));
 }
 
 .dateDay {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: #ffffff;
 }
 
 .dateNum {
-  font-size: 0.62rem;
-  color: var(--s-primary, #38bdf8);
+  font-size: 0.65rem;
+  color: var(--s-primary, #2979ff);
+  font-weight: 600;
 }
 
-.timeChipsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* Time Selection */
+.timeSectionHeader {
+  display: flex;
+  align-items: center;
   gap: 5px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  margin-bottom: 8px;
 }
 
-.timeChip {
-  padding: 5px 3px;
+.clockIcon {
+  color: var(--s-primary, #2979ff);
+}
+
+.timeSlotsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.timeSlotBtn {
+  padding: 6px 2px;
   background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 7px;
-  font-size: 0.72rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-size: 0.74rem;
   font-weight: 700;
   color: #ffffff;
   cursor: pointer;
@@ -628,106 +721,135 @@
   transition: all 0.2s;
 }
 
-.timeChipActive {
-  background: var(--s-primary, #6366f1) !important;
+.timeSlotBtnActive {
+  background: var(--s-primary, #2979ff) !important;
   color: #ffffff !important;
   border-color: transparent !important;
-  box-shadow: 0 0 10px var(--s-glow, rgba(99, 102, 241, 0.4));
+  box-shadow: 0 0 12px var(--s-glow, rgba(41, 121, 255, 0.4));
 }
 
 /* Form */
-.bookingForm {
+.procutForm {
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  margin-top: 2px;
+  gap: 10px;
+  margin-top: 4px;
 }
 
-.formRow {
+.formInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fieldLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.inputWrapper {
   width: 100%;
 }
 
-.inputField {
+.procutInput {
   width: 100%;
-  padding: 7px 10px;
+  padding: 8px 12px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  color: #ffffff;
-  font-size: 0.78rem;
-  box-sizing: border-box;
-}
-
-.inputField:focus {
-  outline: none;
-  border-color: var(--s-primary, #6366f1);
-}
-
-.submitBookingBtn {
-  width: 100%;
-  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 10px;
-  font-size: 0.82rem;
+  color: #ffffff;
+  font-size: 0.8rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.procutInput:focus {
+  outline: none;
+  border-color: var(--s-primary, #2979ff);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Official ProCut Submit Button */
+.procutSubmitBtn {
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 12px;
+  font-size: 0.86rem;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: var(--s-primary, #6366f1);
-  box-shadow: 0 4px 18px var(--s-glow, rgba(99, 102, 241, 0.35));
+  background: var(--s-primary, #2979ff);
+  box-shadow: 0 4px 20px var(--s-glow, rgba(41, 121, 255, 0.4));
   border: none;
   cursor: pointer;
   transition: all 0.2s;
   color: #ffffff;
+  margin-top: 4px;
 }
 
-.submitBookingBtn:hover {
+.procutSubmitBtn:hover {
   transform: translateY(-1px);
-  filter: brightness(1.15);
+  filter: brightness(1.12);
+  box-shadow: 0 6px 24px var(--s-glow, rgba(41, 121, 255, 0.5));
 }
 
 /* Success Confirmation Screen */
 .successScreen {
-  padding: 20px 14px;
+  padding: 24px 14px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
-.successIcon {
-  font-size: 2.5rem;
-  animation: bounceSuccess 1.5s infinite;
+.successBadgeCircle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--s-badge-bg, rgba(41, 121, 255, 0.2));
+  border: 2px solid var(--s-primary, #2979ff);
+  color: var(--s-primary, #2979ff);
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  box-shadow: 0 0 20px var(--s-glow, rgba(41, 121, 255, 0.35));
+  animation: pulseSuccess 2s infinite ease-in-out;
 }
 
-@keyframes bounceSuccess {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+@keyframes pulseSuccess {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
 .successTitle {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 900;
   color: #ffffff;
   margin: 0;
 }
 
 .successSubtitle {
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   color: #94a3b8;
   margin: 0;
+  line-height: 1.4;
 }
 
 .receiptCard {
   width: 100%;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 10px;
+  background: var(--s-card, #121824);
+  border: 1px solid var(--s-border, rgba(255, 255, 255, 0.08));
+  border-radius: 14px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   box-sizing: border-box;
 }
 
@@ -735,40 +857,45 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   color: #94a3b8;
 }
 
 .receiptRow strong {
   color: #ffffff;
+  font-weight: 700;
 }
 
 .successActions {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   width: 100%;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .resetBtn {
   width: 100%;
-  padding: 7px 12px;
-  font-size: 0.75rem;
+  padding: 9px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.visitRealBtn {
-  width: 100%;
-  padding: 8px 12px;
-  font-size: 0.75rem;
-  background: var(--s-primary, #10b981) !important;
+.resetBtn:hover {
+  background: rgba(255, 255, 255, 0.14);
 }
 
-/* App Footer */
+/* App Footer inside the phone */
 .appFooter {
-  padding: 10px 14px;
+  padding: 12px 14px;
   text-align: center;
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   color: #64748b;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
@@ -776,23 +903,82 @@
   justify-content: center;
   gap: 4px;
   flex-shrink: 0;
+  margin-top: auto;
 }
 
 .procutBranding {
-  color: var(--s-primary, #818cf8);
+  color: var(--s-primary, #2979ff);
   font-weight: 800;
 }
 
-/* Mobile responsive adjustments */
+/* External Link Badge outside phone */
+.outerLiveLinkArea {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.outerLiveBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+}
+
+.outerLiveBadge:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments for smaller screens */
 @media (max-width: 480px) {
   .phoneFrame {
-    max-width: 100%;
-    height: 500px;
-    max-height: 500px;
-    border-radius: 28px;
-    padding: 6px;
+    max-width: min(94vw, 360px);
+    height: 630px;
+    max-height: 630px;
+    border-radius: 38px;
+    padding: 8px 6px 6px;
   }
+  
   .phoneScreen {
-    border-radius: 20px;
+    border-radius: 28px;
+  }
+
+  .coverArea {
+    height: 155px;
+  }
+
+  .salonProfile {
+    margin-top: -30px;
+    padding: 0 12px 12px;
+  }
+
+  .logoHalo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logoAvatar {
+    font-size: 1.6rem;
+  }
+
+  .bookingContainer {
+    padding: 0 10px 14px;
+    gap: 12px;
+  }
+
+  .timeSlotsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
   }
 }

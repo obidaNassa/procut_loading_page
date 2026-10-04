@@ -16,7 +16,6 @@ export default function InteractiveDemo() {
   const [selectedDateIndex, setSelectedDateIndex] = useState(0)
   const [selectedTime, setSelectedTime] = useState('11:30')
   const [booked, setBooked] = useState(false)
-  const [hasScrolled, setHasScrolled] = useState(false)
 
   const screenRef = useRef(null)
 
@@ -28,7 +27,7 @@ export default function InteractiveDemo() {
     { day: lang === 'he' ? 'יום ג׳' : lang === 'ar' ? 'الثلاثاء' : 'Tue', date: '07/10' },
   ]
 
-  const times = ['10:00', '11:30', '13:00', '15:15', '16:45', '18:00']
+  const times = ['10:00', '11:30', '13:00', '15:15', '16:45', '18:00', '19:15', '20:30']
 
   const handleSalonChange = (salonId) => {
     setSelectedSalonId(salonId)
@@ -37,15 +36,8 @@ export default function InteractiveDemo() {
     setSelectedDateIndex(0)
     setSelectedTime('11:30')
     setBooked(false)
-    setHasScrolled(false)
     if (screenRef.current) {
       screenRef.current.scrollTop = 0
-    }
-  }
-
-  const handleScroll = (e) => {
-    if (e.target.scrollTop > 40 && !hasScrolled) {
-      setHasScrolled(true)
     }
   }
 
@@ -61,7 +53,7 @@ export default function InteractiveDemo() {
   const activeService = currentSalon.services[selectedService] || currentSalon.services[0]
   const th = currentSalon.theme
 
-  // Inline CSS variables specific to the active salon's authentic theme
+  // Inline CSS variables specific to the active salon's authentic ProCut theme
   const salonThemeStyles = {
     '--s-primary': th.primary,
     '--s-glow': th.primaryGlow,
@@ -109,7 +101,7 @@ export default function InteractiveDemo() {
                   className={`${styles.salonPill} ${isActive ? styles.salonPillActive : ''}`}
                   style={isActive ? {
                     borderColor: salon.theme.primary,
-                    boxShadow: `0 0 18px ${salon.theme.primaryGlow}`,
+                    boxShadow: `0 0 16px ${salon.theme.primaryGlow}`,
                     background: `linear-gradient(135deg, ${salon.theme.badgeBg}, rgba(255,255,255,0.03))`
                   } : {}}
                   onClick={() => handleSalonChange(salon.id)}
@@ -127,19 +119,21 @@ export default function InteractiveDemo() {
           </div>
         </div>
 
-        {/* Compact Phone Frame with Internal Scrolling */}
+        {/* Real Smartphone Mockup Container */}
         <div className={styles.screenWrapper}>
           <div className={styles.phoneFrame}>
-            <div className={styles.phoneSpeaker} />
+            {/* Dynamic Island / iPhone Speaker Notch */}
+            <div className={styles.dynamicIsland}>
+              <div className={styles.notchCamera}></div>
+            </div>
 
-            {/* Scrollable Phone Screen */}
+            {/* Scrollable Smartphone Viewport */}
             <div
               className={styles.phoneScreen}
               style={salonThemeStyles}
               ref={screenRef}
-              onScroll={handleScroll}
             >
-              {/* Cover Area */}
+              {/* CLEAN Cover Area - ZERO text on top of image as requested */}
               <div className={styles.coverArea}>
                 <img
                   src={currentSalon.coverImg}
@@ -149,33 +143,26 @@ export default function InteractiveDemo() {
                 />
                 <div className={styles.coverGradient} />
 
-                {/* Top Nav Bar inside app */}
+                {/* Top Action Buttons (Menu & Language) */}
                 <div className={styles.topAppNav}>
-                  <div className={styles.appMenuIcon} aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                  <div className={styles.circleMenuBtn} aria-label="Menu">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+                      <line x1="4" y1="7" x2="20" y2="7"></line>
+                      <line x1="4" y1="12" x2="20" y2="12"></line>
+                      <line x1="4" y1="17" x2="20" y2="17"></line>
+                    </svg>
                   </div>
-                  <div className={styles.liveIndicator}>
-                    <span className={styles.liveDot}></span>
-                    <span>ProCut Live</span>
+                  <div className={styles.circleMenuBtn} aria-label="Language">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
                   </div>
                 </div>
-
-                {/* External Link directly to real website */}
-                <a
-                  href={currentSalon.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.directLiveLink}
-                  title="Open real site at procut.me"
-                >
-                  <span>{lang === 'ar' ? 'عرض الموقع الحي' : lang === 'he' ? 'פתח דף מקורי באתר' : 'Open Live Site'}</span>
-                  <span>↗</span>
-                </a>
               </div>
 
-              {/* Salon Profile Header */}
+              {/* Salon Profile Header overlapping cover with -mt */}
               <div className={styles.salonProfile}>
                 <div className={styles.logoHalo}>
                   <span className={styles.logoAvatar}>{currentSalon.avatarImg}</span>
@@ -183,202 +170,276 @@ export default function InteractiveDemo() {
 
                 <div className={styles.profileText}>
                   <h3 className={styles.salonTitle}>{currentSalon.name}</h3>
-                  <span className={styles.salonTagBadge}>{currentSalon.category[lang] || currentSalon.category.he}</span>
                   <p className={styles.salonBio}>{currentSalon.desc[lang] || currentSalon.desc.he}</p>
+
+                  <div className={styles.locationRow}>
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className={styles.pinIcon}>
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>{currentSalon.location[lang] || currentSalon.location.he}</span>
+                  </div>
                 </div>
 
-                {/* Social & Contact Actions */}
-                <div className={styles.socialBar}>
+                {/* Social Circle Buttons - Exactly like ProCut */}
+                <div className={styles.socialCirclesRow}>
                   <a
                     href={currentSalon.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${styles.socialBtn} ${styles.socialWhatsApp}`}
+                    className={`${styles.socialCircle} ${styles.circleWhatsApp}`}
                     aria-label="WhatsApp"
+                    title="WhatsApp"
                   >
-                    <span>💬</span>
-                    <span>WhatsApp</span>
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
                   </a>
                   <a
                     href={currentSalon.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${styles.socialBtn} ${styles.socialWaze}`}
+                    className={`${styles.socialCircle} ${styles.circleWaze}`}
                     aria-label="Waze"
+                    title="Waze"
                   >
-                    <span>🧭</span>
-                    <span>Waze</span>
+                    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                    </svg>
                   </a>
                   <a
                     href={currentSalon.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${styles.socialBtn} ${styles.socialInstagram}`}
+                    className={`${styles.socialCircle} ${styles.circleInstagram}`}
                     aria-label="Instagram"
+                    title="Instagram"
                   >
-                    <span>📸</span>
-                    <span>Instagram</span>
+                    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                    </svg>
+                  </a>
+                  <a
+                    href={currentSalon.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${styles.socialCircle} ${styles.circleTikTok}`}
+                    aria-label="TikTok"
+                    title="TikTok"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.8.1V9a6.33 6.33 0 0 0-.8-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.05a8.27 8.27 0 0 0 4.76 1.5V7.12a4.83 4.83 0 0 1-1-.43z" />
+                    </svg>
                   </a>
                 </div>
               </div>
 
-              {/* Scroll Down Hint Banner */}
-              {!booked && !hasScrolled && (
-                <div
-                  className={styles.scrollDownHint}
-                  onClick={() => {
-                    if (screenRef.current) {
-                      screenRef.current.scrollBy({ top: 200, behavior: 'smooth' })
-                    }
-                  }}
-                >
-                  <span>{lang === 'ar' ? 'مرر لأسفل لاختيار الخدمة والموعد' : lang === 'he' ? 'גללו מטה לבחירת שירות ותור' : 'Scroll down to select service & time'}</span>
-                  <span className={styles.scrollArrow}>↓</span>
-                </div>
-              )}
-
-              {/* Booking Flow Form (Scroll down to view) */}
+              {/* Booking Flow Form - Scroll down to complete */}
               {!booked ? (
                 <div className={styles.bookingContainer}>
-                  {/* Step 1: Select Staff */}
-                  <div className={styles.stepSection}>
-                    <div className={styles.stepHeaderRow}>
-                      <span className={styles.stepNumber}>1</span>
-                      <h4 className={styles.stepTitle}>
-                        {currentSalon.staffTitle[lang] || currentSalon.staffTitle.he}
+                  {/* Step 1: Select Staff (בחרו ספר) */}
+                  <section className={styles.stepSection}>
+                    <div className={styles.sectionHeader}>
+                      <h4 className={styles.procutSectionTitle}>
+                        {lang === 'ar' ? 'اختر ' : lang === 'he' ? 'בחרו ' : 'Select '}
+                        <span className={styles.primaryAccent}>
+                          {currentSalon.staffTitle[lang] ? currentSalon.staffTitle[lang].replace(/בחרו |اختر |Select /g, '') : 'ספר'}
+                        </span>
                       </h4>
+                      <p className={styles.procutSectionSubtitle}>
+                        {lang === 'ar' ? 'اختر مقدم الخدمة المفضل لديك' : lang === 'he' ? 'בחרו את הספר או נותן השירות המועדף עליכם.' : 'Choose your preferred specialist.'}
+                      </p>
                     </div>
 
-                    <div className={styles.staffRow}>
-                      {currentSalon.staff.map((st, i) => (
-                        <button
-                          key={st.id}
-                          type="button"
-                          className={`${styles.staffCard} ${selectedStaff === i ? styles.staffCardActive : ''}`}
-                          onClick={() => setSelectedStaff(i)}
-                        >
-                          <div className={styles.staffAvatarCircle}>
-                            <span>{st.avatar}</span>
-                          </div>
-                          <span className={styles.staffName}>{st.name}</span>
-                          <span className={styles.staffRole}>{st.role}</span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Step 2: Select Service */}
-                  <div className={styles.stepSection}>
-                    <div className={styles.stepHeaderRow}>
-                      <span className={styles.stepNumber}>2</span>
-                      <h4 className={styles.stepTitle}>
-                        {lang === 'ar' ? 'בחרו שירות / اختر الخدمة' : lang === 'he' ? 'בחרו שירות' : 'Select Service'}
-                      </h4>
-                    </div>
-
-                    <div className={styles.servicesList}>
-                      {currentSalon.services.map((srv, i) => (
-                        <div
-                          key={srv.id}
-                          className={`${styles.serviceCard} ${selectedService === i ? styles.serviceCardActive : ''}`}
-                          onClick={() => setSelectedService(i)}
-                        >
-                          <div className={styles.serviceMain}>
-                            <div className={styles.serviceNameRow}>
-                              <span className={styles.serviceIcon}>✂️</span>
-                              <div>
-                                <span className={styles.serviceName}>{srv.name}</span>
-                                <span className={styles.serviceTime}>{srv.time}</span>
-                              </div>
+                    <div className={styles.staffGrid}>
+                      {currentSalon.staff.map((st, i) => {
+                        const isStActive = selectedStaff === i
+                        return (
+                          <button
+                            key={st.id}
+                            type="button"
+                            className={`${styles.staffCard} ${isStActive ? styles.staffCardActive : ''}`}
+                            onClick={() => setSelectedStaff(i)}
+                          >
+                            <div className={`${styles.staffAvatarHalo} ${isStActive ? styles.staffAvatarActive : ''}`}>
+                              <span>{st.avatar}</span>
                             </div>
-                            <span className={styles.servicePrice}>{srv.price}</span>
-                          </div>
-                          <p className={styles.serviceDesc}>{srv.desc}</p>
-                        </div>
-                      ))}
+                            <span className={styles.staffName}>{st.name}</span>
+                          </button>
+                        )
+                      })}
                     </div>
-                  </div>
+                  </section>
 
-                  {/* Step 3: Calendar & Times */}
-                  <div className={styles.stepSection}>
-                    <div className={styles.stepHeaderRow}>
-                      <span className={styles.stepNumber}>3</span>
-                      <h4 className={styles.stepTitle}>
-                        {lang === 'ar' ? 'קביעת תור / حدد الموعد' : lang === 'he' ? 'קביעת תור' : 'Choose Date & Time'}
+                  {/* Step 2: Select Service (בחרו שירות) */}
+                  <section className={styles.stepSection}>
+                    <div className={styles.sectionHeader}>
+                      <h4 className={styles.procutSectionTitle}>
+                        {lang === 'ar' ? 'اختر ' : lang === 'he' ? 'בחרו ' : 'Select '}
+                        <span className={styles.primaryAccent}>
+                          {lang === 'ar' ? 'الخدمة' : lang === 'he' ? 'שירות' : 'Service'}
+                        </span>
+                      </h4>
+                      <p className={styles.procutSectionSubtitle}>
+                        {lang === 'ar' ? 'تحدد هذه الخطوة مدة الخدمة وسعرها.' : lang === 'he' ? 'בחירה זו קובעת את משך הטיפול ואת המחיר.' : 'This sets treatment duration and price.'}
+                      </p>
+                    </div>
+
+                    <div className={styles.servicesGrid}>
+                      {currentSalon.services.map((srv, i) => {
+                        const isSrvActive = selectedService === i
+                        return (
+                          <button
+                            key={srv.id}
+                            type="button"
+                            className={`${styles.serviceCard} ${isSrvActive ? styles.serviceCardActive : ''}`}
+                            onClick={() => setSelectedService(i)}
+                          >
+                            <div className={styles.serviceTopRow}>
+                              <div className={styles.serviceMetaGroup}>
+                                <div className={styles.serviceIconBox}>
+                                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <circle cx="6" cy="6" r="3"></circle>
+                                    <circle cx="6" cy="18" r="3"></circle>
+                                    <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                                    <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                                    <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                                  </svg>
+                                </div>
+                                <div>
+                                  <div className={styles.serviceName}>{srv.name}</div>
+                                  <div className={styles.serviceTime}>{srv.time}</div>
+                                </div>
+                              </div>
+                              <div className={styles.servicePrice}>{srv.price}</div>
+                            </div>
+                            <p className={styles.serviceDesc}>{srv.desc}</p>
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </section>
+
+                  {/* Step 3: Date & Time Picker Card (קביעת תור) */}
+                  <section className={styles.bookingCard}>
+                    <div className={styles.bookingCardHeader}>
+                      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="2" className={styles.cardHeaderIcon}>
+                        <path d="M8 2v4"></path>
+                        <path d="M16 2v4"></path>
+                        <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                        <path d="M3 10h18"></path>
+                      </svg>
+                      <h4 className={styles.bookingCardTitle}>
+                        {lang === 'ar' ? 'حجز موعد' : lang === 'he' ? 'קביעת תור' : 'Schedule Appointment'}
                       </h4>
                     </div>
 
-                    {/* Date Chips */}
-                    <div className={styles.dateChipsRow}>
-                      {dates.map((d, i) => (
-                        <button
-                          key={i}
-                          type="button"
-                          className={`${styles.dateChip} ${selectedDateIndex === i ? styles.dateChipActive : ''}`}
-                          onClick={() => setSelectedDateIndex(i)}
-                        >
-                          <span className={styles.dateDay}>{d.day}</span>
-                          <span className={styles.dateNum}>{d.date}</span>
-                        </button>
-                      ))}
-                    </div>
-
-                    {/* Time Slots */}
-                    <div className={styles.timeChipsGrid}>
-                      {times.map((tm, i) => (
-                        <button
-                          key={i}
-                          type="button"
-                          className={`${styles.timeChip} ${selectedTime === tm ? styles.timeChipActive : ''}`}
-                          onClick={() => setSelectedTime(tm)}
-                        >
-                          {tm}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Form & Submit */}
-                  <form onSubmit={handleBooking} className={styles.bookingForm}>
-                    <div className={styles.formRow}>
-                      <input
-                        type="text"
-                        required
-                        defaultValue="ישראל ישראלי"
-                        placeholder={lang === 'ar' ? 'الاسم الكامل' : lang === 'he' ? 'שם מלא' : 'Full Name'}
-                        className={styles.inputField}
-                      />
-                    </div>
-                    <div className={styles.formRow}>
-                      <input
-                        type="tel"
-                        required
-                        defaultValue="050-1234567"
-                        placeholder={lang === 'ar' ? 'رقم الهاتف' : lang === 'he' ? 'מספר טלפון' : 'Phone Number'}
-                        className={styles.inputField}
-                        dir="ltr"
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className={`btn btn-primary ${styles.submitBookingBtn}`}
-                    >
-                      <span>⚡</span>
-                      <span>
-                        {lang === 'ar'
-                          ? `تأكيد حجز الموعد (${activeService.price})`
-                          : lang === 'he'
-                          ? `קבלת קוד אימות וסגירת תור (${activeService.price})`
-                          : `Confirm Booking (${activeService.price})`}
+                    {/* Month Navigator */}
+                    <div className={styles.monthNavRow}>
+                      <button type="button" className={styles.arrowBtn}>‹</button>
+                      <span className={styles.monthLabel}>
+                        {lang === 'ar' ? 'أكتوبر 2026' : lang === 'he' ? 'אוקטובר 2026' : 'October 2026'}
                       </span>
-                    </button>
-                  </form>
+                      <button type="button" className={styles.arrowBtn}>›</button>
+                    </div>
+
+                    {/* Date Chips Carousel */}
+                    <div className={styles.dateChipsRow}>
+                      {dates.map((d, i) => {
+                        const isDateActive = selectedDateIndex === i
+                        return (
+                          <button
+                            key={i}
+                            type="button"
+                            className={`${styles.dateChip} ${isDateActive ? styles.dateChipActive : ''}`}
+                            onClick={() => setSelectedDateIndex(i)}
+                          >
+                            <span className={styles.dateDay}>{d.day}</span>
+                            <span className={styles.dateNum}>{d.date}</span>
+                          </button>
+                        )
+                      })}
+                    </div>
+
+                    {/* Time Slot Label */}
+                    <div className={styles.timeSectionHeader}>
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" className={styles.clockIcon}>
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span>{lang === 'ar' ? 'اختر الوقت' : lang === 'he' ? 'בחרו שעה' : 'Select Time'}</span>
+                    </div>
+
+                    {/* 4-column Time Slots Grid */}
+                    <div className={styles.timeSlotsGrid}>
+                      {times.map((tm, i) => {
+                        const isTimeActive = selectedTime === tm
+                        return (
+                          <button
+                            key={i}
+                            type="button"
+                            className={`${styles.timeSlotBtn} ${isTimeActive ? styles.timeSlotBtnActive : ''}`}
+                            onClick={() => setSelectedTime(tm)}
+                          >
+                            {tm}
+                          </button>
+                        )
+                      })}
+                    </div>
+
+                    {/* Form Inputs & Submit Button */}
+                    <form onSubmit={handleBooking} className={styles.procutForm}>
+                      <div className={styles.formInputGroup}>
+                        <label className={styles.fieldLabel}>
+                          {lang === 'ar' ? 'الاسم الكامل' : lang === 'he' ? 'שם מלא' : 'Full Name'}
+                        </label>
+                        <div className={styles.inputWrapper}>
+                          <input
+                            type="text"
+                            required
+                            defaultValue="ישראל ישראלי"
+                            placeholder="ישראל ישראלי"
+                            className={styles.procutInput}
+                          />
+                        </div>
+                      </div>
+
+                      <div className={styles.formInputGroup}>
+                        <label className={styles.fieldLabel}>
+                          {lang === 'ar' ? 'رقم الهاتف' : lang === 'he' ? 'טלפון' : 'Phone Number'}
+                        </label>
+                        <div className={styles.inputWrapper}>
+                          <input
+                            type="tel"
+                            required
+                            defaultValue="050-1234567"
+                            placeholder="050-1234567"
+                            className={styles.procutInput}
+                            dir="ltr"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Official ProCut Button: קבלת קוד אימות */}
+                      <button
+                        type="submit"
+                        className={styles.procutSubmitBtn}
+                      >
+                        {lang === 'ar'
+                          ? `تأكيد الموعد (${activeService.price})`
+                          : lang === 'he'
+                          ? `קבלת קוד אימות (${activeService.price})`
+                          : `Confirm Booking (${activeService.price})`}
+                      </button>
+                    </form>
+                  </section>
                 </div>
               ) : (
                 /* Instant Booking Success State */
                 <div className={styles.successScreen}>
-                  <div className={styles.successIcon}>🎉</div>
+                  <div className={styles.successBadgeCircle}>✓</div>
                   <h3 className={styles.successTitle}>
                     {lang === 'ar' ? 'تم تأكيد موعدك بنجاح!' : lang === 'he' ? 'התור נקבע בהצלחה!' : 'Booking Confirmed!'}
                   </h3>
@@ -416,31 +477,40 @@ export default function InteractiveDemo() {
                   <div className={styles.successActions}>
                     <button
                       type="button"
-                      className={`btn btn-outline ${styles.resetBtn}`}
+                      className={styles.resetBtn}
                       onClick={() => setBooked(false)}
                     >
-                      🔄 {lang === 'ar' ? 'حجز موعد إضافي לדמו' : lang === 'he' ? 'קבע תור נוסף לדוגמה' : 'Book Another Appointment'}
+                      🔄 {lang === 'ar' ? 'حجز موعد إضافي' : lang === 'he' ? 'קבע תור נוסף לדוגמה' : 'Book Another Appointment'}
                     </button>
-
-                    <a
-                      href={currentSalon.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`btn btn-primary ${styles.visitRealBtn}`}
-                    >
-                      🌐 {lang === 'ar' ? 'زيارة الرابط الأصلي المباشر' : lang === 'he' ? 'עבור לדף המקורי של העסק' : 'Visit Live Webpage'}
-                    </a>
                   </div>
                 </div>
               )}
 
               {/* Official ProCut Footer inside the app */}
               <div className={styles.appFooter}>
-                <span>Powered by</span>
-                <strong className={styles.procutBranding}>ProCut.me</strong>
+                <span>© 2026 · Powered by <strong className={styles.procutBranding}>ProCut</strong></span>
               </div>
             </div>
+
+            {/* Smartphone Bottom Home Bar */}
+            <div className={styles.homeIndicatorBar}></div>
           </div>
+        </div>
+
+        {/* External direct link badge outside the phone for credibility */}
+        <div className={styles.outerLiveLinkArea}>
+          <a
+            href={currentSalon.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.outerLiveBadge}
+          >
+            <span>🌐</span>
+            <span>
+              {lang === 'ar' ? `زيارة الموقع الحي الأصلي: procut.me/${currentSalon.slug}` : lang === 'he' ? `ביקור באתר המקורי: procut.me/${currentSalon.slug}` : `Visit Live Website: procut.me/${currentSalon.slug}`}
+            </span>
+            <span>↗</span>
+          </a>
         </div>
       </div>
     </section>
