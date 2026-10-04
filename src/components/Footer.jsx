@@ -9,9 +9,9 @@ export default function Footer() {
 
   const links = {
     product: [
-      { label: t.nav.features, href: '#features' },
-      { label: t.nav.interactiveDemo, href: '#demo' },
       { label: t.nav.pricing, href: '#pricing' },
+      { label: t.nav.interactiveDemo, href: '#demo' },
+      { label: t.nav.features, href: '#features' },
     ],
     legal: [
       { label: lang === 'ar' ? 'سياسة الخصوصية' : lang === 'he' ? 'מדיניות פרטיות' : 'Privacy Policy', href: '#' },

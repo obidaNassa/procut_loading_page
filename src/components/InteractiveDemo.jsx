@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { LIVE_SALONS } from '../data/liveSalons'
 import styles from './InteractiveDemo.module.css'
@@ -16,6 +16,9 @@ export default function InteractiveDemo() {
   const [selectedDateIndex, setSelectedDateIndex] = useState(0)
   const [selectedTime, setSelectedTime] = useState('11:30')
   const [booked, setBooked] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
+
+  const screenRef = useRef(null)
 
   // Quick dates for calendar simulation
   const dates = [
@@ -34,15 +37,40 @@ export default function InteractiveDemo() {
     setSelectedDateIndex(0)
     setSelectedTime('11:30')
     setBooked(false)
+    setHasScrolled(false)
+    if (screenRef.current) {
+      screenRef.current.scrollTop = 0
+    }
+  }
+
+  const handleScroll = (e) => {
+    if (e.target.scrollTop > 40 && !hasScrolled) {
+      setHasScrolled(true)
+    }
   }
 
   const handleBooking = (e) => {
     e.preventDefault()
     setBooked(true)
+    if (screenRef.current) {
+      screenRef.current.scrollTop = 0
+    }
   }
 
   const activeStaff = currentSalon.staff[selectedStaff] || currentSalon.staff[0]
   const activeService = currentSalon.services[selectedService] || currentSalon.services[0]
+  const th = currentSalon.theme
+
+  // Inline CSS variables specific to the active salon's authentic theme
+  const salonThemeStyles = {
+    '--s-primary': th.primary,
+    '--s-glow': th.primaryGlow,
+    '--s-bg': th.bg,
+    '--s-card': th.cardBg,
+    '--s-border': th.border,
+    '--s-badge-bg': th.badgeBg,
+    '--s-badge-text': th.badgeText,
+  }
 
   return (
     <section className={styles.section} id="demo" aria-label="Interactive Demo Section">
@@ -79,11 +107,18 @@ export default function InteractiveDemo() {
                   role="tab"
                   aria-selected={isActive}
                   className={`${styles.salonPill} ${isActive ? styles.salonPillActive : ''}`}
+                  style={isActive ? {
+                    borderColor: salon.theme.primary,
+                    boxShadow: `0 0 18px ${salon.theme.primaryGlow}`,
+                    background: `linear-gradient(135deg, ${salon.theme.badgeBg}, rgba(255,255,255,0.03))`
+                  } : {}}
                   onClick={() => handleSalonChange(salon.id)}
                 >
                   <span className={styles.salonPillIcon}>{salon.icon}</span>
                   <div className={styles.salonPillText}>
-                    <span className={styles.salonPillName}>{salon.name}</span>
+                    <span className={styles.salonPillName} style={isActive ? { color: salon.theme.primary } : {}}>
+                      {salon.name}
+                    </span>
                     <span className={styles.salonPillTag}>{salon.category[lang] || salon.category.he}</span>
                   </div>
                 </button>
@@ -92,13 +127,19 @@ export default function InteractiveDemo() {
           </div>
         </div>
 
-        {/* Live Simulation Phone Frame */}
+        {/* Compact Phone Frame with Internal Scrolling */}
         <div className={styles.screenWrapper}>
           <div className={styles.phoneFrame}>
             <div className={styles.phoneSpeaker} />
 
-            <div className={styles.phoneScreen}>
-              {/* ProCut Cover Banner */}
+            {/* Scrollable Phone Screen */}
+            <div
+              className={styles.phoneScreen}
+              style={salonThemeStyles}
+              ref={screenRef}
+              onScroll={handleScroll}
+            >
+              {/* Cover Area */}
               <div className={styles.coverArea}>
                 <img
                   src={currentSalon.coverImg}
@@ -121,7 +162,7 @@ export default function InteractiveDemo() {
                   </div>
                 </div>
 
-                {/* External Link directly to the real live website */}
+                {/* External Link directly to real website */}
                 <a
                   href={currentSalon.url}
                   target="_blank"
@@ -181,7 +222,22 @@ export default function InteractiveDemo() {
                 </div>
               </div>
 
-              {/* Booking Flow Form */}
+              {/* Scroll Down Hint Banner */}
+              {!booked && !hasScrolled && (
+                <div
+                  className={styles.scrollDownHint}
+                  onClick={() => {
+                    if (screenRef.current) {
+                      screenRef.current.scrollBy({ top: 200, behavior: 'smooth' })
+                    }
+                  }}
+                >
+                  <span>{lang === 'ar' ? 'مرر لأسفل لاختيار الخدمة والموعد' : lang === 'he' ? 'גללו מטה לבחירת שירות ותור' : 'Scroll down to select service & time'}</span>
+                  <span className={styles.scrollArrow}>↓</span>
+                </div>
+              )}
+
+              {/* Booking Flow Form (Scroll down to view) */}
               {!booked ? (
                 <div className={styles.bookingContainer}>
                   {/* Step 1: Select Staff */}
@@ -307,9 +363,6 @@ export default function InteractiveDemo() {
                     <button
                       type="submit"
                       className={`btn btn-primary ${styles.submitBookingBtn}`}
-                      style={{
-                        background: `linear-gradient(135deg, ${currentSalon.accentColor}, #6366f1)`
-                      }}
                     >
                       <span>⚡</span>
                       <span>
@@ -356,7 +409,7 @@ export default function InteractiveDemo() {
                     </div>
                     <div className={styles.receiptRow}>
                       <span>{lang === 'ar' ? 'المبلغ:' : lang === 'he' ? 'סה"כ:' : 'Total:'}</span>
-                      <strong style={{ color: currentSalon.accentColor }}>{activeService.price}</strong>
+                      <strong style={{ color: th.primary }}>{activeService.price}</strong>
                     </div>
                   </div>
 
@@ -366,7 +419,7 @@ export default function InteractiveDemo() {
                       className={`btn btn-outline ${styles.resetBtn}`}
                       onClick={() => setBooked(false)}
                     >
-                      🔄 {lang === 'ar' ? 'حجز موعد إضافي للدמו' : lang === 'he' ? 'קבע תור נוסף לדוגמה' : 'Book Another Appointment'}
+                      🔄 {lang === 'ar' ? 'حجز موعد إضافي לדמו' : lang === 'he' ? 'קבע תור נוסף לדוגמה' : 'Book Another Appointment'}
                     </button>
 
                     <a

@@ -18,8 +18,8 @@ function AppContent() {
       <main>
         <Hero />
         <Pricing />
-        <Features />
         <InteractiveDemo />
+        <Features />
         <Testimonials />
         <SupportCards />
         <CTA />
