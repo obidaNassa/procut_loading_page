@@ -4,12 +4,13 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 16px 0;
+  padding: 14px 0;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .navbar.scrolled {
-  background: rgba(9, 9, 15, 0.88);
+  background: rgba(9, 9, 15, 0.9);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -21,14 +22,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 12px;
+  width: 100%;
 }
 
 /* Logo */
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
 }
@@ -38,15 +40,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   background: linear-gradient(135deg, #6366f1, #06b6d4);
-  border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(99, 102, 241, 0.45);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.45);
+  flex-shrink: 0;
 }
 
 .logoIcon {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: #ffffff;
 }
 
@@ -57,7 +60,7 @@
 }
 
 .logoText {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 900;
   letter-spacing: -0.03em;
 }
@@ -71,9 +74,9 @@
 }
 
 .logoSub {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   color: #a0a0c0;
   text-transform: uppercase;
 }
@@ -106,7 +109,8 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 /* Language selector */
@@ -115,7 +119,7 @@
   align-items: center;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 4px 8px;
+  padding: 3px 6px;
   border-radius: 100px;
   backdrop-filter: blur(10px);
 }
@@ -124,9 +128,9 @@
   background: none;
   border: none;
   color: #8c8ca5;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  padding: 3px 8px;
+  padding: 3px 6px;
   border-radius: 100px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -144,14 +148,14 @@
 
 .langDivider {
   color: rgba(255, 255, 255, 0.15);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   user-select: none;
 }
 
 /* Nav CTA */
 .navCta {
-  padding: 10px 20px;
-  font-size: 0.88rem;
+  padding: 9px 18px;
+  font-size: 0.85rem;
   font-weight: 700;
   box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
 }
@@ -170,7 +174,7 @@
 
 .hamburger span {
   display: block;
-  width: 22px;
+  width: 20px;
   height: 2px;
   background: #f1f1f9;
   border-radius: 2px;
@@ -196,6 +200,7 @@
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
 }
 
 .mobileMenu.mobileMenuOpen {
@@ -206,17 +211,17 @@
   display: flex;
   justify-content: center;
   gap: 8px;
-  padding: 16px 20px 8px;
+  padding: 14px 16px 8px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .mobileLangBtn {
-  padding: 8px 16px;
+  padding: 6px 14px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.04);
   color: #a0a0c0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
@@ -226,14 +231,14 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding: 12px 20px 24px;
+  padding: 10px 16px 20px;
   gap: 4px;
 }
 
 .mobileLink {
   display: block;
-  padding: 10px 14px;
-  font-size: 1rem;
+  padding: 9px 12px;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #a0a0c0;
   border-radius: 8px;
@@ -253,6 +258,8 @@
 .mobileCta {
   width: 100%;
   justify-content: center;
+  padding: 12px;
+  font-size: 0.9rem;
 }
 
 .mobileWaCta {
@@ -260,10 +267,19 @@
   justify-content: center;
   border-color: rgba(37, 211, 102, 0.4);
   color: #25d366;
+  padding: 12px;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 1080px) {
-  .links { display: none; }
+  .links, .navCta { display: none; }
   .hamburger { display: flex; }
   .mobileMenu { display: block; }
+}
+
+@media (max-width: 480px) {
+  .logoText { font-size: 1.2rem; }
+  .logoBadge { width: 34px; height: 34px; border-radius: 8px; }
+  .logoIcon { font-size: 1rem; }
+  .langBtn { padding: 2px 5px; font-size: 0.72rem; }
 }
