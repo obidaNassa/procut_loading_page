@@ -1,0 +1,101 @@
+.floatingContainer {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+[dir="ltr"] .floatingContainer {
+  right: 30px;
+  left: auto;
+}
+
+.floatingBtn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.floatingBtn:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+}
+
+.pulseRing {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid #25d366;
+  animation: pulseAnim 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseAnim {
+  0% { transform: scale(0.9); opacity: 0.9; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 0;
+  background: rgba(14, 14, 28, 0.96);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  backdrop-filter: blur(16px);
+  border-radius: 12px;
+  padding: 8px 14px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+[dir="ltr"] .tooltip {
+  align-items: flex-start;
+  right: 0;
+}
+
+.tooltip strong {
+  font-size: 0.82rem;
+  color: #ffffff;
+}
+
+.tooltip small {
+  font-size: 0.74rem;
+  color: #25d366;
+  font-weight: 700;
+}
+
+.floatingBtn:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .floatingContainer {
+    bottom: 20px;
+    right: 20px;
+  }
+  .floatingBtn {
+    width: 54px;
+    height: 54px;
+  }
+  .tooltip {
+    display: none;
+  }
+}

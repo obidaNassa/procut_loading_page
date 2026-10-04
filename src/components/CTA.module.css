@@ -1,0 +1,118 @@
+.section {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.blob1 {
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 65%);
+  pointer-events: none;
+  animation: blob1 10s ease-in-out infinite alternate;
+}
+
+.blob2 {
+  position: absolute;
+  bottom: -200px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 65%);
+  pointer-events: none;
+  animation: blob2 12s ease-in-out infinite alternate;
+}
+
+@keyframes blob1 {
+  from { transform: scale(1) translate(0,0); }
+  to   { transform: scale(1.15) translate(50px,50px); }
+}
+@keyframes blob2 {
+  from { transform: scale(1) translate(0,0); }
+  to   { transform: scale(1.1) translate(-50px,-30px); }
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 70px 48px;
+  background: rgba(15,15,30,0.7);
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 32px;
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 0 80px rgba(99,102,241,0.1),
+    0 30px 60px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.badge {
+  margin-bottom: 24px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+}
+
+.desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+
+.desc strong {
+  color: var(--primary-300);
+}
+
+.ctaRow {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.ctaBtn {
+  min-width: 230px;
+}
+
+.demoBtn {
+  min-width: 160px;
+}
+
+.trustRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  justify-content: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.trustItem {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .inner {
+    padding: 48px 24px;
+  }
+  .ctaRow {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ctaBtn, .demoBtn {
+    width: 100%;
+    max-width: 320px;
+  }
+}

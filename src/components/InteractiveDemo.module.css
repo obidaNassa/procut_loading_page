@@ -1,0 +1,530 @@
+.section {
+  position: relative;
+  padding: 100px 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.badge {
+  margin-bottom: 16px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  margin: 0 auto;
+}
+
+.tabContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.tabSwitcher {
+  display: inline-flex;
+  background: rgba(20, 20, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px;
+  border-radius: 16px;
+  gap: 8px;
+  backdrop-filter: blur(16px);
+}
+
+.tabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #a0a0c0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tabBtn:hover {
+  color: #ffffff;
+}
+
+.tabBtnActive {
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  color: #ffffff !important;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.screenWrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Phone Frame */
+.phoneFrame {
+  width: 100%;
+  max-width: 440px;
+  background: #0d0d1a;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  border-radius: 36px;
+  padding: 14px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(99, 102, 241, 0.2);
+  position: relative;
+}
+
+.phoneSpeaker {
+  width: 60px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  margin: 8px auto 14px;
+}
+
+.phoneScreen {
+  background: #14142b;
+  border-radius: 26px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.appHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 18px;
+}
+
+.appBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.appBrandLogo {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.appBrandName {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.appStatus {
+  font-size: 0.72rem;
+  color: #34d399;
+  display: block;
+}
+
+.appRating {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fbbf24;
+}
+
+.bookingFlow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stepBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stepLabel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.servicesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.serviceOption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.serviceOption:hover {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.serviceActive {
+  background: rgba(99, 102, 241, 0.15) !important;
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.25);
+}
+
+.serviceIcon {
+  font-size: 1.3rem;
+}
+
+.serviceDetails {
+  flex: 1;
+}
+
+.serviceName {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.serviceMeta {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.servicePrice {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #22d3ee;
+}
+
+.staffGrid {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.staffOption {
+  flex: 1;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.staffOption:hover {
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.staffActive {
+  background: rgba(99, 102, 241, 0.2) !important;
+  border-color: #6366f1 !important;
+}
+
+.staffAvatar {
+  font-size: 1.3rem;
+}
+
+.staffName {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.timesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.timeChip {
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.timeChip:hover {
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.timeChipActive {
+  background: linear-gradient(135deg, #6366f1, #06b6d4) !important;
+  border-color: transparent !important;
+  color: #ffffff;
+}
+
+.confirmBookingBtn {
+  margin-top: 8px;
+  width: 100%;
+  font-weight: 800;
+  padding: 14px;
+}
+
+/* Success Screen */
+.successScreen {
+  padding: 24px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.successIcon {
+  font-size: 3rem;
+  animation: float 2s ease-in-out infinite;
+}
+
+.successTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #34d399;
+  line-height: 1.4;
+}
+
+.successCard {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: inherit;
+}
+
+.successRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: #94a3b8;
+}
+
+.successRow strong {
+  color: #ffffff;
+}
+
+.confirmedBadge {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.resetDemoBtn {
+  width: 100%;
+  font-size: 0.88rem;
+}
+
+/* Dashboard Frame */
+.dashboardFrame {
+  width: 100%;
+  background: rgba(18, 18, 38, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(99, 102, 241, 0.15);
+}
+
+.dashHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dashTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.dashLiveBadge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.15);
+  padding: 3px 8px;
+  border-radius: 99px;
+}
+
+.dashDate {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.kpiCard {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kpiIcon {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.kpiVal {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.kpiLbl {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.scheduleBox {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.scheduleTitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.appointmentList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashAppItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.dashAppItem:hover {
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.dashAppTime {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--primary-400);
+  min-width: 55px;
+}
+
+.dashAppClient {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashAppClient strong {
+  font-size: 0.92rem;
+  color: #ffffff;
+}
+
+.dashAppClient span {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.badgeSuccess {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.15);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.badgeWarning {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.15);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.dashAppPrice {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 0;
+  }
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dashHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .dashAppItem {
+    flex-wrap: wrap;
+  }
+}
