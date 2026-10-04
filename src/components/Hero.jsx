@@ -43,8 +43,12 @@ export default function Hero() {
             <span>{t.hero.headlineStart}</span>
             <br />
             <span className="gradient-text">{t.hero.headlineGradient}</span>
-            <br />
-            <span>{t.hero.headlineEnd}</span>
+            {t.hero.headlineEnd ? (
+              <>
+                <br />
+                <span>{t.hero.headlineEnd}</span>
+              </>
+            ) : null}
           </h1>
 
           {/* Subtext */}
