@@ -10,7 +10,7 @@ export default function Pricing() {
   const [selectedSmsBundle, setSelectedSmsBundle] = useState(0)
 
   // Unlimited SMS staff selection (0 = 1 staff, 1 = 2 staff, 2 = 3+ staff)
-  const [selectedStaffTier, setSelectedStaffTier] = useState(1) // Default to 2 staff
+  const [selectedStaffTier, setSelectedStaffTier] = useState(0) // Default to 1 staff (119.99 ₪)
 
   const smsBundles = [
     { count: '1,000 SMS', extra: '+20 ₪', total: '99.99 ₪' },
