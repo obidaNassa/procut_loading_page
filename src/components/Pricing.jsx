@@ -188,26 +188,7 @@ export default function Pricing() {
               <p className={styles.planTagline}>{t.pricing.plan3Tagline}</p>
             </div>
 
-            {/* Staff Tier Selector */}
-            <div className={styles.interactiveBox}>
-              <label className={styles.interactiveLabel}>
-                {t.pricing.plan3StaffToggleLabel}
-              </label>
-              <div className={styles.staffTiersRow}>
-                {staffTiers.map((st, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    className={`${styles.staffTierBtn} ${selectedStaffTier === i ? styles.staffTierBtnActive : ''}`}
-                    onClick={() => setSelectedStaffTier(i)}
-                  >
-                    <span>{st.label}</span>
-                    <strong>₪{st.price}</strong>
-                  </button>
-                ))}
-              </div>
-            </div>
-
+            {/* Price Block (Matches Plan 2 position) */}
             <div className={styles.priceBlock}>
               <div className={styles.priceMain}>
                 <span className={styles.currency}>₪</span>
@@ -223,6 +204,26 @@ export default function Pricing() {
                   ? 'הודעות SMS והתראות ללא הגבלה לכל אנשי הצוות'
                   : 'Unlimited SMS & notifications for all staff members'}
               </p>
+            </div>
+
+            {/* Staff Tier Selector - Styled identically to SMS bundle */}
+            <div className={styles.interactiveBox}>
+              <label className={styles.interactiveLabel}>
+                {t.pricing.plan3StaffToggleLabel}
+              </label>
+              <div className={styles.staffBundleOptions}>
+                {staffTiers.map((st, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    className={`${styles.staffBundleBtn} ${selectedStaffTier === i ? styles.staffBundleBtnActive : ''}`}
+                    onClick={() => setSelectedStaffTier(i)}
+                  >
+                    <span className={styles.staffBundleCount}>{st.label}</span>
+                    <span className={styles.staffBundlePrice}>₪{st.price}</span>
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className={styles.featureHighlights}>

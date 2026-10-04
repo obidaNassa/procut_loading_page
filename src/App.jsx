@@ -5,8 +5,6 @@ import Hero from './components/Hero'
 import Pricing from './components/Pricing'
 import Features from './components/Features'
 import InteractiveDemo from './components/InteractiveDemo'
-import DeepDive from './components/DeepDive'
-import Recommendations from './components/Recommendations'
 import Testimonials from './components/Testimonials'
 import SupportCards from './components/SupportCards'
 import CTA from './components/CTA'
@@ -22,8 +20,6 @@ function AppContent() {
         <Pricing />
         <Features />
         <InteractiveDemo />
-        <DeepDive />
-        <Recommendations />
         <Testimonials />
         <SupportCards />
         <CTA />
