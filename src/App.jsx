@@ -6,7 +6,6 @@ import Pricing from './components/Pricing'
 import Features from './components/Features'
 import InteractiveDemo from './components/InteractiveDemo'
 import Testimonials from './components/Testimonials'
-import SupportCards from './components/SupportCards'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 import FloatingWhatsApp from './components/FloatingWhatsApp'
@@ -21,7 +20,6 @@ function AppContent() {
         <InteractiveDemo />
         <Features />
         <Testimonials />
-        <SupportCards />
         <CTA />
       </main>
       <Footer />

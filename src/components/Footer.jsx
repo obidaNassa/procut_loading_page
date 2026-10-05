@@ -13,11 +13,6 @@ export default function Footer() {
       { label: t.nav.interactiveDemo, href: '#demo' },
       { label: t.nav.features, href: '#features' },
     ],
-    legal: [
-      { label: lang === 'ar' ? 'سياسة الخصوصية' : lang === 'he' ? 'מדיניות פרטיות' : 'Privacy Policy', href: '#' },
-      { label: lang === 'ar' ? 'شروط الاستخدام' : lang === 'he' ? 'תנאי שימוש' : 'Terms of Service', href: '#' },
-      { label: lang === 'ar' ? 'إمكانية الوصول' : lang === 'he' ? 'הצהרת נגישות' : 'Accessibility', href: '#' },
-    ],
     contact: [
       { label: `WhatsApp: ${DISPLAY_PHONE}`, href: waUrl },
       { label: lang === 'ar' ? 'دخول لوحة التحكم' : lang === 'he' ? 'כניסת בעלים' : 'Owner Login', href: 'https://procut.me' },
@@ -57,17 +52,6 @@ export default function Footer() {
             <h4 className={styles.linksTitle}>{t.footer.quickLinks}</h4>
             <ul className={styles.linksList}>
               {links.product.map((l, i) => (
-                <li key={i}>
-                  <a href={l.href} className={styles.footerLink}>{l.label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className={styles.linksGroup}>
-            <h4 className={styles.linksTitle}>{lang === 'ar' ? 'الأحكام والخصوصية' : lang === 'he' ? 'משפטי' : 'Legal'}</h4>
-            <ul className={styles.linksList}>
-              {links.legal.map((l, i) => (
                 <li key={i}>
                   <a href={l.href} className={styles.footerLink}>{l.label}</a>
                 </li>
