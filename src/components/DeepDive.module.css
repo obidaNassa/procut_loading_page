@@ -35,7 +35,7 @@
 }
 
 .pillarCard {
-  background: rgba(18, 18, 38, 0.7);
+  background: rgba(var(--card-rgb), 0.7);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(var(--overlay-rgb), 0.08);
   border-radius: 18px;

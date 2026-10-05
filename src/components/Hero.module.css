@@ -417,7 +417,7 @@
   position: absolute;
   top: -20px;
   left: -20px;
-  background: rgba(18, 18, 38, 0.95);
+  background: rgba(var(--card-rgb), 0.95);
   border: 1px solid rgba(34, 211, 238, 0.3);
   border-radius: 14px;
   padding: 10px 14px;
