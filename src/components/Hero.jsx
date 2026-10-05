@@ -14,8 +14,8 @@ export default function Hero() {
   ]
 
   const stats = [
-    { value: '500+', label: t.hero.statBusinesses },
-    { value: '50K+', label: t.hero.statAppointments },
+    { value: '20+', label: t.hero.statBusinesses },
+    { value: '10K+', label: t.hero.statAppointments },
     { value: '99%', label: t.hero.statSatisfaction },
   ]
 

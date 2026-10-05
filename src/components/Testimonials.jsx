@@ -21,6 +21,22 @@ export default function Testimonials() {
           </h2>
         </div>
 
+        {/* Stats Row before Feedbacks */}
+        <div className={styles.statsRow}>
+          <div className={styles.statCard}>
+            <span className={styles.statValue}>20+</span>
+            <span className={styles.statLabel}>{t.hero.statBusinesses}</span>
+          </div>
+          <div className={styles.statCard}>
+            <span className={styles.statValue}>10K+</span>
+            <span className={styles.statLabel}>{t.hero.statAppointments}</span>
+          </div>
+          <div className={styles.statCard}>
+            <span className={styles.statValue}>99%</span>
+            <span className={styles.statLabel}>{t.hero.statSatisfaction}</span>
+          </div>
+        </div>
+
         <div className={styles.grid}>
           {t.testimonials.items.map((item, i) => (
             <blockquote
