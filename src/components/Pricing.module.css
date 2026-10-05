@@ -228,7 +228,7 @@
 
 .priceNote {
   font-size: 0.78rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   margin-top: 4px;
 }
 
@@ -246,7 +246,7 @@
   display: block;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #cbd5e1;
+  color: var(--text-secondary);
   margin-bottom: 8px;
 }
 
@@ -337,7 +337,7 @@
 
 .staffBundlePrice {
   font-size: 0.72rem;
-  color: #a5b4fc;
+  color: var(--primary-600);
   font-weight: 800;
 }
 
@@ -365,7 +365,7 @@
 }
 
 .checkIconAccent {
-  color: #38bdf8;
+  color: var(--accent-600);
   font-weight: 900;
   font-size: 1rem;
   flex-shrink: 0;
@@ -377,7 +377,7 @@
 }
 
 .noSmsItem {
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 
 .planBtn {
@@ -438,7 +438,7 @@
 
 .checkText {
   font-size: 0.84rem;
-  color: #cbd5e1;
+  color: var(--text-secondary);
 }
 
 .freeTrialNotice {

@@ -369,7 +369,7 @@
 
 .mockupService {
   font-size: 0.72rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   margin-top: 1px;
   white-space: nowrap;
   overflow: hidden;
@@ -409,7 +409,7 @@
 
 .mockupStatLbl {
   font-size: 0.65rem;
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 
 /* Floating notification and SMS badge - desktop */

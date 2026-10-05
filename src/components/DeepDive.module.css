@@ -102,7 +102,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.72rem;
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 
 .sampleNotifLogo {
@@ -174,7 +174,7 @@
   align-items: center;
   gap: 8px;
   font-size: 0.78rem;
-  color: #cbd5e1;
+  color: var(--text-secondary);
 }
 
 .flowStepNum {
@@ -248,7 +248,7 @@
 
 .roleInfo span {
   font-size: 0.7rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
