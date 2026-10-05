@@ -43,7 +43,7 @@ export default function Footer() {
               className={`btn btn-primary ${styles.footerCta}`}
               id="footer-whatsapp-btn"
             >
-              💬 {t.footer.whatsapp} ({DISPLAY_PHONE})
+              💬 {t.footer.whatsapp} <bdi dir="ltr">({DISPLAY_PHONE})</bdi>
             </a>
           </div>
 
