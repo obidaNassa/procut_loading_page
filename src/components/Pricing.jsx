@@ -107,8 +107,9 @@ export default function Pricing() {
             </a>
           </article>
 
-          {/* PACKAGE 2: Limited SMS Plan (79.99 ₪ + SMS Addons) */}
+          {/* PACKAGE 2: Limited SMS Plan (POPULAR) */}
           <article className={`${styles.planCard} ${styles.planLimited}`} id="plan-limited">
+            <div className={styles.popularBadge}>{t.pricing.plan3Popular}</div>
             <div className={styles.planTop}>
               <div className={`${styles.planBadge} ${styles.badgeCyan}`}>SMS BUNDLE</div>
               <h3 className={styles.planName}>{t.pricing.plan2Name}</h3>
@@ -169,17 +170,15 @@ export default function Pricing() {
               href={waBaseUrl(`${t.pricing.plan2Name} (${smsBundles[selectedSmsBundle].count})`)}
               target="_blank"
               rel="noopener noreferrer"
-              className={`btn btn-outline ${styles.planBtn}`}
+              className={`btn btn-primary btn-lg ${styles.planBtn} ${styles.planBtnGlow}`}
               id="cta-plan-limited"
             >
               {t.pricing.plan2Cta}
             </a>
           </article>
 
-          {/* PACKAGE 3: Unlimited SMS Plan (POPULAR) */}
+          {/* PACKAGE 3: Unlimited SMS Plan */}
           <article className={`${styles.planCard} ${styles.planUnlimited}`} id="plan-unlimited">
-            <div className={styles.popularBadge}>{t.pricing.plan3Popular}</div>
-
             <div className={styles.planTop}>
               <div className={`${styles.planBadge} ${styles.badgeInfinity}`}>
                 <span>∞ UNLIMITED</span>
@@ -245,7 +244,7 @@ export default function Pricing() {
               href={waBaseUrl(`${t.pricing.plan3Name} (${staffTiers[selectedStaffTier].label})`)}
               target="_blank"
               rel="noopener noreferrer"
-              className={`btn btn-primary btn-lg ${styles.planBtn} ${styles.planBtnGlow}`}
+              className={`btn btn-outline ${styles.planBtn}`}
               id="cta-plan-unlimited"
             >
               🚀 {t.pricing.plan3Cta}
