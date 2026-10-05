@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
-import { getWhatsAppUrl, DISPLAY_PHONE } from '../constants'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
@@ -20,8 +19,6 @@ export default function Navbar() {
     { label: t.nav.features, href: '#features' },
     { label: t.nav.testimonials, href: '#testimonials' },
   ]
-
-  const waUrl = getWhatsAppUrl(t.floatingWhatsApp.message)
 
   return (
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
@@ -142,17 +139,6 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
             >
               🎁 {t.nav.ctaBtn}
-            </a>
-          </li>
-          <li className={styles.mobileActionItem}>
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`btn btn-outline ${styles.mobileWaCta}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              💬 WhatsApp: {DISPLAY_PHONE}
             </a>
           </li>
         </ul>
