@@ -174,7 +174,7 @@
 }
 
 .highlightCard {
-  background: rgba(20, 20, 42, 0.65);
+  background: rgba(var(--card-rgb), 0.65);
   border: 1px solid rgba(var(--overlay-rgb), 0.08);
   border-radius: 18px;
   padding: 20px 16px;
@@ -199,7 +199,7 @@
 
 .highlightCard:hover {
   transform: translateY(-4px);
-  background: rgba(26, 26, 52, 0.8);
+  background: rgba(var(--card-rgb), 0.8);
   border-color: rgba(var(--brand-1-rgb), 0.4);
 }
 
@@ -283,7 +283,7 @@
 }
 
 .mockupCard {
-  background: rgba(18, 18, 38, 0.94);
+  background: rgba(var(--card-rgb), 0.94);
   backdrop-filter: blur(24px);
   border: 1px solid rgba(var(--overlay-rgb), 0.12);
   border-radius: 20px;
