@@ -15,6 +15,9 @@ export const translations = {
       themeDefault: '🌌 סייבר כהה (ברירת מחדל)',
       themeGold: '👑 שחור וזהב יוקרתי',
       themeLight: '☀️ בהיר ואלגנטי',
+      themeLightIndigo: '💎 אינדיגו מודרני',
+      themeLightEmerald: '🌿 אזמרגד יוקרתי',
+      themeLightMint: '🌊 מנטה ואוקיינוס',
     },
     hero: {
       badge: 'פלטפורמת הניהול וההזמנות המובילה למספרות ויופי',
@@ -390,6 +393,9 @@ export const translations = {
       themeDefault: '🌌 داكن افتراضي (Cyber Dark)',
       themeGold: '👑 أسود وذهبي فاخر (Black & Gold)',
       themeLight: '☀️ فاتح أنيق (Light Mode)',
+      themeLightIndigo: '💎 نيلي تكنولوجي (Indigo & Tech)',
+      themeLightEmerald: '🌿 زمرد فاخر (Luxury Emerald)',
+      themeLightMint: '🌊 نعناع ومحيط (Mint & Ocean)',
     },
     hero: {
       badge: 'المنصة الرائدة لإدارة صالونات التجميل والعناية',
@@ -765,6 +771,9 @@ export const translations = {
       themeDefault: '🌌 Cyber Dark (Default)',
       themeGold: '👑 Luxury Black & Gold',
       themeLight: '☀️ Clean Light Mode',
+      themeLightIndigo: '💎 Modern Indigo & Tech',
+      themeLightEmerald: '🌿 Luxury Emerald',
+      themeLightMint: '🌊 Fresh Mint & Ocean',
     },
     hero: {
       badge: 'Leading Booking & Management Platform for Beauty Salons',

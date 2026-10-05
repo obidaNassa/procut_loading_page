@@ -77,6 +77,30 @@ export default function Navbar() {
               >
                 ☀️
               </button>
+              <button
+                type="button"
+                className={`${styles.themeIconBtn} ${theme === 'light-indigo' ? styles.themeIconActiveLight : ''}`}
+                onClick={() => setTheme('light-indigo')}
+                title={t.nav.themeLightIndigo}
+              >
+                💎
+              </button>
+              <button
+                type="button"
+                className={`${styles.themeIconBtn} ${theme === 'light-emerald' ? styles.themeIconActiveLight : ''}`}
+                onClick={() => setTheme('light-emerald')}
+                title={t.nav.themeLightEmerald}
+              >
+                🌿
+              </button>
+              <button
+                type="button"
+                className={`${styles.themeIconBtn} ${theme === 'light-mint' ? styles.themeIconActiveLight : ''}`}
+                onClick={() => setTheme('light-mint')}
+                title={t.nav.themeLightMint}
+              >
+                🌊
+              </button>
             </div>
 
             {/* Language Selector */}
@@ -159,6 +183,27 @@ export default function Navbar() {
               title={t.nav.themeLight}
             >
               <span>{t.nav.themeLight}</span>
+            </button>
+            <button
+              className={`${styles.themeBtn} ${theme === 'light-indigo' ? styles.themeActiveLight : ''}`}
+              onClick={() => { setTheme('light-indigo'); setMenuOpen(false); }}
+              title={t.nav.themeLightIndigo}
+            >
+              <span>{t.nav.themeLightIndigo}</span>
+            </button>
+            <button
+              className={`${styles.themeBtn} ${theme === 'light-emerald' ? styles.themeActiveLight : ''}`}
+              onClick={() => { setTheme('light-emerald'); setMenuOpen(false); }}
+              title={t.nav.themeLightEmerald}
+            >
+              <span>{t.nav.themeLightEmerald}</span>
+            </button>
+            <button
+              className={`${styles.themeBtn} ${theme === 'light-mint' ? styles.themeActiveLight : ''}`}
+              onClick={() => { setTheme('light-mint'); setMenuOpen(false); }}
+              title={t.nav.themeLightMint}
+            >
+              <span>{t.nav.themeLightMint}</span>
             </button>
           </div>
         </div>
