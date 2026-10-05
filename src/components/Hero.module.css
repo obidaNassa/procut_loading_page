@@ -132,11 +132,19 @@
 
 .ctaRow {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
   margin-bottom: 40px;
   width: 100%;
+}
+
+@media (min-width: 600px) {
+  .ctaRow {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .ctaPrimary {
