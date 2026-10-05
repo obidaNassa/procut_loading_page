@@ -11,6 +11,10 @@ export const translations = {
       testimonials: 'המלצות לקוחות',
       ctaBtn: 'התחל חודש חינם',
       langSelect: 'שפה',
+      themeSelect: 'עיצוב המערכת',
+      themeDefault: '🌌 סייבר כהה (ברירת מחדל)',
+      themeGold: '👑 שחור וזהב יוקרתי',
+      themeLight: '☀️ בהיר ואלגנטי',
     },
     hero: {
       badge: 'פלטפורמת הניהול וההזמנות המובילה למספרות ויופי',
@@ -382,6 +386,10 @@ export const translations = {
       testimonials: 'آراء العملاء',
       ctaBtn: 'ابدأ شهرك المجاني',
       langSelect: 'اللغة',
+      themeSelect: 'مظهر الموقع',
+      themeDefault: '🌌 داكن افتراضي (Cyber Dark)',
+      themeGold: '👑 أسود وذهبي فاخر (Black & Gold)',
+      themeLight: '☀️ فاتح أنيق (Light Mode)',
     },
     hero: {
       badge: 'المنصة الرائدة لإدارة صالونات التجميل والعناية',
@@ -753,6 +761,10 @@ export const translations = {
       testimonials: 'Testimonials',
       ctaBtn: 'Start Free Month',
       langSelect: 'Language',
+      themeSelect: 'Theme',
+      themeDefault: '🌌 Cyber Dark (Default)',
+      themeGold: '👑 Luxury Black & Gold',
+      themeLight: '☀️ Clean Light Mode',
     },
     hero: {
       badge: 'Leading Booking & Management Platform for Beauty Salons',

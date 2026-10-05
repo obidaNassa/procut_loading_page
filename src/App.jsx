@@ -1,5 +1,6 @@
 import './index.css'
 import { LanguageProvider } from './context/LanguageContext'
+import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Pricing from './components/Pricing'
@@ -30,9 +31,11 @@ function AppContent() {
 
 function App() {
   return (
-    <LanguageProvider>
-      <AppContent />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
+    </ThemeProvider>
   )
 }
 

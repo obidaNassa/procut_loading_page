@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
+import { useTheme } from '../context/ThemeContext'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
   const { lang, setLang, t } = useLanguage()
+  const { theme, setTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -47,8 +49,36 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Actions: Language Switcher + CTA */}
+          {/* Actions: Language Switcher + Theme Switcher + CTA */}
           <div className={styles.actions}>
+            {/* Theme Selector (Desktop) */}
+            <div className={styles.themeSelector} role="group" aria-label={t.nav.themeSelect}>
+              <button
+                type="button"
+                className={`${styles.themeIconBtn} ${theme === 'default' ? styles.themeIconActive : ''}`}
+                onClick={() => setTheme('default')}
+                title={t.nav.themeDefault}
+              >
+                🌌
+              </button>
+              <button
+                type="button"
+                className={`${styles.themeIconBtn} ${theme === 'gold' ? styles.themeIconActiveGold : ''}`}
+                onClick={() => setTheme('gold')}
+                title={t.nav.themeGold}
+              >
+                👑
+              </button>
+              <button
+                type="button"
+                className={`${styles.themeIconBtn} ${theme === 'light' ? styles.themeIconActiveLight : ''}`}
+                onClick={() => setTheme('light')}
+                title={t.nav.themeLight}
+              >
+                ☀️
+              </button>
+            </div>
+
             {/* Language Selector */}
             <div className={styles.langSelector} role="group" aria-label={t.nav.langSelect}>
               <button
@@ -101,7 +131,7 @@ export default function Navbar() {
         </nav>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu (Sandwich Menu) */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}>
         <div className={styles.mobileLangBar}>
           <button
@@ -122,6 +152,34 @@ export default function Navbar() {
           >
             English
           </button>
+        </div>
+
+        {/* Theme Selector inside Sandwich Menu */}
+        <div className={styles.mobileThemeBar}>
+          <span className={styles.themeLabel}>{t.nav.themeSelect}:</span>
+          <div className={styles.themeGrid}>
+            <button
+              className={`${styles.themeBtn} ${theme === 'default' ? styles.themeActive : ''}`}
+              onClick={() => { setTheme('default'); setMenuOpen(false); }}
+              title={t.nav.themeDefault}
+            >
+              <span>{t.nav.themeDefault}</span>
+            </button>
+            <button
+              className={`${styles.themeBtn} ${theme === 'gold' ? styles.themeActiveGold : ''}`}
+              onClick={() => { setTheme('gold'); setMenuOpen(false); }}
+              title={t.nav.themeGold}
+            >
+              <span>{t.nav.themeGold}</span>
+            </button>
+            <button
+              className={`${styles.themeBtn} ${theme === 'light' ? styles.themeActiveLight : ''}`}
+              onClick={() => { setTheme('light'); setMenuOpen(false); }}
+              title={t.nav.themeLight}
+            >
+              <span>{t.nav.themeLight}</span>
+            </button>
+          </div>
         </div>
 
         <ul className={styles.mobileLinks}>
