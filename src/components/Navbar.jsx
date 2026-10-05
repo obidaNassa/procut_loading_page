@@ -132,15 +132,6 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li className={styles.mobileActionItem}>
-            <a
-              href="#pricing"
-              className={`btn btn-primary ${styles.mobileCta}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              🎁 {t.nav.ctaBtn}
-            </a>
-          </li>
         </ul>
       </div>
     </header>
