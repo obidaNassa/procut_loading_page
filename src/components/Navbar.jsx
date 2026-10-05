@@ -133,26 +133,7 @@ export default function Navbar() {
 
       {/* Mobile menu (Sandwich Menu) */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}>
-        <div className={styles.mobileLangBar}>
-          <button
-            className={`${styles.mobileLangBtn} ${lang === 'ar' ? styles.langActive : ''}`}
-            onClick={() => { setLang('ar'); setMenuOpen(false); }}
-          >
-            العربية
-          </button>
-          <button
-            className={`${styles.mobileLangBtn} ${lang === 'he' ? styles.langActive : ''}`}
-            onClick={() => { setLang('he'); setMenuOpen(false); }}
-          >
-            עברית
-          </button>
-          <button
-            className={`${styles.mobileLangBtn} ${lang === 'en' ? styles.langActive : ''}`}
-            onClick={() => { setLang('en'); setMenuOpen(false); }}
-          >
-            English
-          </button>
-        </div>
+
 
         {/* Theme Selector inside Sandwich Menu */}
         <div className={styles.mobileThemeBar}>
