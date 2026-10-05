@@ -42,7 +42,7 @@
   max-width: 700px;
   margin: 0 auto;
   padding: 70px 48px;
-  background: rgba(15,15,30,0.7);
+  background: rgba(var(--card-rgb), 0.7);
   border: 1px solid rgba(var(--brand-1-rgb),0.2);
   border-radius: 32px;
   backdrop-filter: blur(20px);

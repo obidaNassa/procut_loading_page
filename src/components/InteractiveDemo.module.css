@@ -59,7 +59,7 @@
   align-items: center;
   gap: 10px;
   padding: 9px 16px;
-  background: rgba(18, 20, 36, 0.75);
+  background: rgba(var(--card-rgb), 0.75);
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
   cursor: pointer;
@@ -72,8 +72,8 @@
 }
 
 .salonPill:hover {
-  background: rgba(28, 30, 56, 0.9);
-  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(var(--card-rgb), 0.9);
+  border-color: rgba(var(--brand-1-rgb), 0.4);
   transform: translateY(-2px);
 }
 
