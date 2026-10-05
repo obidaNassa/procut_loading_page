@@ -2,8 +2,8 @@
   position: relative;
   padding: 80px 0;
   background: rgba(14, 14, 28, 0.5);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(var(--overlay-rgb), 0.06);
+  border-bottom: 1px solid rgba(var(--overlay-rgb), 0.06);
   width: 100%;
   overflow: hidden;
 }
@@ -37,7 +37,7 @@
 .pillarCard {
   background: rgba(18, 18, 38, 0.7);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(var(--overlay-rgb), 0.08);
   border-radius: 18px;
   padding: 24px 20px;
   display: flex;
@@ -50,7 +50,7 @@
 
 .pillarCard:hover {
   transform: translateY(-4px);
-  border-color: rgba(99, 102, 241, 0.4);
+  border-color: rgba(var(--brand-1-rgb), 0.4);
 }
 
 .pillarHeader {
@@ -74,7 +74,7 @@
 .pillarTitle {
   font-size: 1.05rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-heading);
   line-height: 1.3;
 }
 
@@ -88,7 +88,7 @@
 .sampleNotif {
   margin-top: auto;
   background: rgba(9, 9, 18, 0.85);
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(var(--brand-1-rgb), 0.25);
   border-radius: 12px;
   padding: 12px;
   display: flex;
@@ -113,14 +113,14 @@
 .sampleNotifBody strong {
   display: block;
   font-size: 0.8rem;
-  color: #ffffff;
+  color: var(--text-heading);
   margin-bottom: 2px;
   line-height: 1.3;
 }
 
 .sampleNotifBody p {
   font-size: 0.72rem;
-  color: #a0a0c0;
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -145,8 +145,8 @@
 
 .notifBtnReschedule {
   flex: 1;
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
+  background: rgba(var(--overlay-rgb), 0.08);
+  color: var(--text-heading);
   border: none;
   padding: 6px 4px;
   border-radius: 6px;
@@ -160,7 +160,7 @@
 .flowBox {
   margin-top: auto;
   background: rgba(9, 9, 18, 0.85);
-  border: 1px solid rgba(6, 182, 212, 0.2);
+  border: 1px solid rgba(var(--brand-2-rgb), 0.2);
   border-radius: 12px;
   padding: 12px;
   display: flex;
@@ -181,19 +181,19 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(var(--overlay-rgb), 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
   font-size: 0.7rem;
-  color: #ffffff;
+  color: var(--text-heading);
   flex-shrink: 0;
 }
 
 .flowArrow {
   text-align: center;
-  color: #06b6d4;
+  color: var(--brand-2);
   font-weight: 800;
   font-size: 0.8rem;
   line-height: 1;
@@ -240,7 +240,7 @@
 
 .roleInfo strong {
   font-size: 0.8rem;
-  color: #ffffff;
+  color: var(--text-heading);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -256,7 +256,7 @@
 
 .roleDivider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(var(--overlay-rgb), 0.08);
 }
 
 @media (max-width: 992px) {

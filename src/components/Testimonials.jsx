@@ -4,7 +4,7 @@ import styles from './Testimonials.module.css'
 export default function Testimonials() {
   const { t } = useLanguage()
 
-  const colors = ['#6366f1', '#06b6d4', '#f43f5e', '#a855f7', '#fb923c', '#22d3ee']
+  const colors = ['var(--brand-1)', 'var(--brand-2)', '#f43f5e', '#a855f7', '#fb923c', '#22d3ee']
 
   return (
     <section className={styles.section} id="testimonials" aria-label="Testimonials">

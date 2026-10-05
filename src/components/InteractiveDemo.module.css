@@ -1,7 +1,7 @@
 .section {
   position: relative;
   padding: 60px 0;
-  background: radial-gradient(ellipse at 50% 40%, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 40%, rgba(var(--brand-1-rgb), 0.06) 0%, transparent 70%);
   width: 100%;
   overflow: hidden;
 }
@@ -41,7 +41,7 @@
   overflow-x: auto;
   padding: 6px 4px 14px;
   scrollbar-width: thin;
-  scrollbar-color: rgba(99, 102, 241, 0.3) transparent;
+  scrollbar-color: rgba(var(--brand-1-rgb), 0.3) transparent;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .salonSelectorScroll::-webkit-scrollbar-thumb {
-  background: rgba(99, 102, 241, 0.3);
+  background: rgba(var(--brand-1-rgb), 0.3);
   border-radius: 6px;
 }
 
@@ -95,7 +95,7 @@
 .salonPillName {
   font-size: 0.9rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-heading);
 }
 
 .salonPillTag {
@@ -125,7 +125,7 @@
   box-shadow: 
     0 25px 80px -10px rgba(0, 0, 0, 0.9),
     0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 0 50px -5px var(--s-glow, rgba(99, 102, 241, 0.25));
+    0 0 50px -5px var(--s-glow, rgba(var(--brand-1-rgb), 0.25));
   position: relative;
   box-sizing: border-box;
   display: flex;
@@ -484,8 +484,8 @@
 }
 
 .staffCard:hover {
-  background: var(--s-badge-bg, rgba(99, 102, 241, 0.12));
-  border-color: var(--s-primary, rgba(99, 102, 241, 0.3));
+  background: var(--s-badge-bg, rgba(var(--brand-1-rgb), 0.12));
+  border-color: var(--s-primary, rgba(var(--brand-1-rgb), 0.3));
 }
 
 .staffCardActive {
@@ -540,8 +540,8 @@
 }
 
 .serviceCard:hover {
-  background: var(--s-badge-bg, rgba(99, 102, 241, 0.1));
-  border-color: var(--s-border, rgba(99, 102, 241, 0.25));
+  background: var(--s-badge-bg, rgba(var(--brand-1-rgb), 0.1));
+  border-color: var(--s-border, rgba(var(--brand-1-rgb), 0.25));
 }
 
 .serviceCardActive {
@@ -940,7 +940,7 @@
   gap: 8px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  color: var(--text-heading);
   font-size: 0.84rem;
   font-weight: 700;
   padding: 8px 18px;

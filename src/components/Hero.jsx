@@ -123,9 +123,9 @@ export default function Hero() {
             <div className={styles.mockupBody}>
               {t.hero.mockupAppointments.map((app, i) => {
                 const gradients = [
-                  'linear-gradient(135deg,#6366f1,#06b6d4)',
+                  'linear-gradient(135deg,var(--brand-1),var(--brand-2))',
                   'linear-gradient(135deg,#f43f5e,#fb923c)',
-                  'linear-gradient(135deg,#22d3ee,#6366f1)',
+                  'linear-gradient(135deg,#22d3ee,var(--brand-1))',
                 ]
                 return (
                   <div key={i} className={styles.mockupAppointment}>

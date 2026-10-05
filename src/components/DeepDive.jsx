@@ -28,7 +28,7 @@ export default function DeepDive() {
           {/* Card 1: Multi-Channel Notifications */}
           <div className={styles.pillarCard}>
             <div className={styles.pillarHeader}>
-              <div className={styles.iconCircle} style={{ background: 'rgba(99,102,241,0.15)', borderColor: '#6366f1' }}>
+              <div className={styles.iconCircle} style={{ background: 'rgba(99,102,241,0.15)', borderColor: 'var(--brand-1)' }}>
                 <span>🔔</span>
               </div>
               <h3 className={styles.pillarTitle}>{t.deepDive.card1Title}</h3>
@@ -55,7 +55,7 @@ export default function DeepDive() {
           {/* Card 2: Re-allocation & Waitlist */}
           <div className={styles.pillarCard}>
             <div className={styles.pillarHeader}>
-              <div className={styles.iconCircle} style={{ background: 'rgba(6,182,212,0.15)', borderColor: '#06b6d4' }}>
+              <div className={styles.iconCircle} style={{ background: 'rgba(6,182,212,0.15)', borderColor: 'var(--brand-2)' }}>
                 <span>⚡</span>
               </div>
               <h3 className={styles.pillarTitle}>{t.deepDive.card2Title}</h3>

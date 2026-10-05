@@ -12,7 +12,7 @@
   transform: translateX(-50%);
   width: 750px;
   height: 600px;
-  background: radial-gradient(ellipse, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(var(--brand-1-rgb), 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -37,10 +37,10 @@
   border-radius: 14px;
   overflow: hidden;
   padding: 2px;
-  background: linear-gradient(90deg, #6366f1, #06b6d4, #f43f5e, #6366f1);
+  background: linear-gradient(90deg, var(--brand-1), var(--brand-2), #f43f5e, var(--brand-1));
   background-size: 300% 300%;
   animation: bannerShimmer 6s linear infinite;
-  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.25);
+  box-shadow: 0 8px 30px rgba(var(--brand-1-rgb), 0.25);
   box-sizing: border-box;
 }
 
@@ -69,7 +69,7 @@
 .bannerText {
   font-size: clamp(0.85rem, 2.5vw, 1.05rem);
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-heading);
   margin: 0;
   line-height: 1.45;
   word-break: break-word;
@@ -90,7 +90,7 @@
   background: rgba(18, 18, 38, 0.7);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(var(--overlay-rgb), 0.08);
   border-radius: 20px;
   padding: 28px 22px;
   display: flex;
@@ -103,29 +103,29 @@
 
 .planCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(var(--brand-1-rgb), 0.15);
 }
 
 .planBasic:hover {
-  border-color: rgba(99, 102, 241, 0.4);
+  border-color: rgba(var(--brand-1-rgb), 0.4);
 }
 
 .planLimited:hover {
-  border-color: rgba(6, 182, 212, 0.4);
+  border-color: rgba(var(--brand-2-rgb), 0.4);
 }
 
 /* Unlimited plan (POPULAR) */
 .planUnlimited {
   background: linear-gradient(180deg, rgba(28, 26, 64, 0.9) 0%, rgba(18, 18, 38, 0.95) 100%);
-  border: 1.5px solid rgba(99, 102, 241, 0.45);
-  box-shadow: 0 16px 50px rgba(99, 102, 241, 0.25);
+  border: 1.5px solid rgba(var(--brand-1-rgb), 0.45);
+  box-shadow: 0 16px 50px rgba(var(--brand-1-rgb), 0.25);
   transform: scale(1.02);
 }
 
 .planUnlimited:hover {
   transform: scale(1.03) translateY(-4px);
-  border-color: #6366f1;
-  box-shadow: 0 24px 60px rgba(99, 102, 241, 0.35);
+  border-color: var(--brand-1);
+  box-shadow: 0 24px 60px rgba(var(--brand-1-rgb), 0.35);
 }
 
 .popularBadge {
@@ -155,16 +155,16 @@
   letter-spacing: 0.06em;
   padding: 3px 8px;
   border-radius: 6px;
-  background: rgba(99, 102, 241, 0.15);
+  background: rgba(var(--brand-1-rgb), 0.15);
   color: var(--primary-300);
-  border: 1px solid rgba(99, 102, 241, 0.3);
+  border: 1px solid rgba(var(--brand-1-rgb), 0.3);
   margin-bottom: 10px;
 }
 
 .badgeCyan {
-  background: rgba(6, 182, 212, 0.15);
-  color: #22d3ee;
-  border-color: rgba(6, 182, 212, 0.3);
+  background: rgba(var(--brand-2-rgb), 0.15);
+  color: var(--accent-400);
+  border-color: rgba(var(--brand-2-rgb), 0.3);
 }
 
 .badgeInfinity {
@@ -176,7 +176,7 @@
 .planName {
   font-size: 1.25rem;
   font-weight: 900;
-  color: #ffffff;
+  color: var(--text-heading);
   margin-bottom: 4px;
 }
 
@@ -190,8 +190,8 @@
 .priceBlock {
   padding: 14px 0;
   margin-bottom: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(var(--overlay-rgb), 0.08);
+  border-bottom: 1px solid rgba(var(--overlay-rgb), 0.08);
 }
 
 .priceMain {
@@ -203,13 +203,13 @@
 .currency {
   font-size: 1.4rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-heading);
 }
 
 .priceNum {
   font-size: 2.5rem;
   font-weight: 900;
-  color: #ffffff;
+  color: var(--text-heading);
   line-height: 1;
 }
 
@@ -234,8 +234,8 @@
 
 /* Interactive Box inside card */
 .interactiveBox {
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(var(--overlay-rgb), 0.035);
+  border: 1px solid rgba(var(--overlay-rgb), 0.07);
   border-radius: 12px;
   padding: 12px;
   margin-bottom: 16px;
@@ -262,8 +262,8 @@
   align-items: center;
   gap: 1px;
   padding: 7px 4px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(var(--overlay-rgb), 0.04);
+  border: 1px solid rgba(var(--overlay-rgb), 0.08);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
@@ -272,23 +272,23 @@
 }
 
 .bundleBtn:hover {
-  background: rgba(6, 182, 212, 0.1);
+  background: rgba(var(--brand-2-rgb), 0.1);
 }
 
 .bundleBtnActive {
-  background: rgba(6, 182, 212, 0.2) !important;
-  border-color: #06b6d4 !important;
+  background: rgba(var(--brand-2-rgb), 0.2) !important;
+  border-color: var(--brand-2) !important;
 }
 
 .bundleCount {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-heading);
 }
 
 .bundleExtra {
   font-size: 0.68rem;
-  color: #22d3ee;
+  color: var(--accent-400);
   font-weight: 600;
 }
 
@@ -307,8 +307,8 @@
   text-align: center;
   gap: 2px;
   padding: 8px 4px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(var(--overlay-rgb), 0.04);
+  border: 1px solid rgba(var(--overlay-rgb), 0.08);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -318,20 +318,20 @@
 }
 
 .staffBundleBtn:hover {
-  background: rgba(99, 102, 241, 0.12);
-  border-color: rgba(99, 102, 241, 0.35);
+  background: rgba(var(--brand-1-rgb), 0.12);
+  border-color: rgba(var(--brand-1-rgb), 0.35);
 }
 
 .staffBundleBtnActive {
-  background: rgba(99, 102, 241, 0.25) !important;
-  border-color: #6366f1 !important;
-  box-shadow: 0 0 14px rgba(99, 102, 241, 0.35);
+  background: rgba(var(--brand-1-rgb), 0.25) !important;
+  border-color: var(--brand-1) !important;
+  box-shadow: 0 0 14px rgba(var(--brand-1-rgb), 0.35);
 }
 
 .staffBundleCount {
   font-size: 0.72rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-heading);
   line-height: 1.25;
 }
 
@@ -355,7 +355,7 @@
   align-items: center;
   gap: 8px;
   font-size: 0.85rem;
-  color: #f1f1f9;
+  color: var(--text-primary);
 }
 
 .checkIcon {
@@ -389,13 +389,13 @@
 }
 
 .planBtnGlow {
-  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.45);
+  box-shadow: 0 6px 25px rgba(var(--brand-1-rgb), 0.45);
 }
 
 /* Checklist box */
 .featuresChecklistBox {
   background: rgba(18, 18, 38, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(var(--overlay-rgb), 0.07);
   border-radius: 18px;
   padding: 24px 20px;
   margin-bottom: 24px;
@@ -405,7 +405,7 @@
 .checklistTitle {
   font-size: 1rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-heading);
   text-align: center;
   margin-bottom: 18px;
 }

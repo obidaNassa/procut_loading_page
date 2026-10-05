@@ -35,7 +35,7 @@ export default function SupportCards() {
         <div className={styles.grid}>
           {/* Card 1: Custom Modifications */}
           <div className={styles.card}>
-            <div className={styles.iconWrap} style={{ background: 'rgba(99,102,241,0.15)', borderColor: '#6366f1' }}>
+            <div className={styles.iconWrap} style={{ background: 'rgba(99,102,241,0.15)', borderColor: 'var(--brand-1)' }}>
               <span>🎨</span>
             </div>
             <h3 className={styles.title}>{t.supportCards.card1Title}</h3>
@@ -53,7 +53,7 @@ export default function SupportCards() {
 
           {/* Card 2: Free Month Activation */}
           <div className={`${styles.card} ${styles.cardPrimary}`}>
-            <div className={styles.iconWrap} style={{ background: 'linear-gradient(135deg,#6366f1,#06b6d4)' }}>
+            <div className={styles.iconWrap} style={{ background: 'linear-gradient(135deg,var(--brand-1),var(--brand-2))' }}>
               <span>🎁</span>
             </div>
             <h3 className={styles.title}>{t.supportCards.card2Title}</h3>

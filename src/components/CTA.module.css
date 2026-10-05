@@ -10,7 +10,7 @@
   left: -200px;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(var(--brand-1-rgb),0.15) 0%, transparent 65%);
   pointer-events: none;
   animation: blob1 10s ease-in-out infinite alternate;
 }
@@ -21,7 +21,7 @@
   right: -100px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(var(--brand-2-rgb),0.1) 0%, transparent 65%);
   pointer-events: none;
   animation: blob2 12s ease-in-out infinite alternate;
 }
@@ -43,13 +43,13 @@
   margin: 0 auto;
   padding: 70px 48px;
   background: rgba(15,15,30,0.7);
-  border: 1px solid rgba(99,102,241,0.2);
+  border: 1px solid rgba(var(--brand-1-rgb),0.2);
   border-radius: 32px;
   backdrop-filter: blur(20px);
   box-shadow:
-    0 0 80px rgba(99,102,241,0.1),
+    0 0 80px rgba(var(--brand-1-rgb),0.1),
     0 30px 60px rgba(0,0,0,0.5),
-    inset 0 1px 0 rgba(255,255,255,0.06);
+    inset 0 1px 0 rgba(var(--overlay-rgb),0.06);
 }
 
 .badge {
@@ -94,7 +94,7 @@
   gap: 12px 24px;
   justify-content: center;
   padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(var(--overlay-rgb),0.06);
 }
 
 .trustItem {
