@@ -73,7 +73,7 @@ export default function Pricing() {
               <a href="#features" className={`${styles.highlightItem} ${styles.featureLink}`}>
                 <span className={styles.checkIcon}>✓</span>
                 <span className={styles.linkText}>
-                  {lang === 'ar' ? 'تشمل جميع مميزات النظام الـ 16' : lang === 'he' ? 'כולל את כל 16 תכונות המערכת (לחץ לפירוט)' : 'Includes all 16 platform features'}
+                  {lang === 'ar' ? 'تشمل جميع مميزات النظام' : lang === 'he' ? 'כולל את כל תכונות המערכת (לחץ לפירוט)' : 'Includes all platform features'}
                 </span>
               </a>
 
@@ -155,7 +155,7 @@ export default function Pricing() {
               <a href="#features" className={`${styles.highlightItem} ${styles.featureLink}`}>
                 <span className={styles.checkIcon}>✓</span>
                 <span className={styles.linkText}>
-                  {lang === 'ar' ? 'تشمل جميع مميزات النظام الـ 16' : lang === 'he' ? 'כולל את כל 16 תכונות המערכת (לחץ לפירוט)' : 'Includes all 16 platform features'}
+                  {lang === 'ar' ? 'تشمل جميع مميزات النظام' : lang === 'he' ? 'כולל את כל תכונות המערכת (לחץ לפירוט)' : 'Includes all platform features'}
                 </span>
               </a>
 
@@ -241,7 +241,7 @@ export default function Pricing() {
               <a href="#features" className={`${styles.highlightItem} ${styles.featureLink}`}>
                 <span className={styles.checkIconAccent}>✓</span>
                 <span className={styles.linkText}>
-                  {lang === 'ar' ? 'تشمل جميع مميزات النظام الـ 16' : lang === 'he' ? 'כולל את כל 16 תכונות המערכת (לחץ לפירוט)' : 'Includes all 16 platform features'}
+                  {lang === 'ar' ? 'تشمل جميع مميزات النظام' : lang === 'he' ? 'כולל את כל תכונות המערכת (לחץ לפירוט)' : 'Includes all platform features'}
                 </span>
               </a>
               <div className={styles.highlightItem}>
