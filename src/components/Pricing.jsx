@@ -191,7 +191,7 @@ export default function Pricing() {
             <div className={styles.priceBlock}>
               <div className={styles.priceMain}>
                 <span className={styles.currency}>₪</span>
-                <span className={`${styles.priceNum} ${styles.priceNumGlow}`}>
+                <span className={styles.priceNum}>
                   {staffTiers[selectedStaffTier].price}
                 </span>
                 <span className={styles.pricePeriod}>{t.pricing.plan1Period}</span>
