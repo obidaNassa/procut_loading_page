@@ -291,7 +291,7 @@ export const translations = {
       plan1Period: '/ חודש',
       plan1Tagline: 'הפתרון המשתלם והנקי ביותר למקצוענים',
       plan1Feature1: 'כל 16 תכונות המערכת ללא יוצא מן הכלל',
-      plan1Feature2: 'התראות מערכת אוטומטיות ותזכורות (Notifications & Reminders)',
+      plan1Feature2: 'התראות ותזכורות אוטומטיות (Notifications)',
       plan1Feature3: 'ללא הודעות SMS',
       plan1Cta: 'התחל חודש חינם',
 
@@ -669,7 +669,7 @@ export const translations = {
       plan1Period: '/ شهرياً',
       plan1Tagline: 'الحل الأمثل والأكثر اقتصاداً للمحترفين',
       plan1Feature1: 'جميع ميزات النظام الـ 16 كاملة',
-      plan1Feature2: 'إشعارات وتذكيرات النظام التلقائية (Notifications & Reminders)',
+      plan1Feature2: 'إشعارات وتذكيرات تلقائية (Notifications)',
       plan1Feature3: 'بدون حزم رسائل نصية SMS',
       plan1Cta: 'ابدأ مجاناً الآن',
 
@@ -1047,7 +1047,7 @@ export const translations = {
       plan1Period: '/ month',
       plan1Tagline: 'The most cost-effective solution for professionals',
       plan1Feature1: 'All 16 core system features included',
-      plan1Feature2: 'Automated system notifications and reminders (Notifications & Reminders)',
+      plan1Feature2: 'Automated alerts & reminders (Notifications)',
       plan1Feature3: 'Without SMS bundles',
       plan1Cta: 'Start Free Month',
 
