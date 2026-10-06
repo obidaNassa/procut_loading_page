@@ -200,6 +200,19 @@
   min-width: 150px;
 }
 
+:global([data-theme="light-emerald"]) .ctaDemo {
+  background: #ffffff;
+  border: 1.5px solid rgba(4, 120, 87, 0.45);
+  color: #065F46;
+  box-shadow: 0 2px 8px rgba(4, 120, 87, 0.08);
+}
+
+:global([data-theme="light-emerald"]) .ctaDemo:hover {
+  border-color: #047857;
+  background: #F0FDF4;
+  color: #047857;
+}
+
 /* 4 PRIMARY HIGHLIGHTS CARDS */
 .highlightsGrid {
   display: grid;
