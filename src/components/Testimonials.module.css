@@ -141,13 +141,30 @@
 }
 
 @media (max-width: 900px) {
-  .grid, .statsRow {
+  .grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .statsRow {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
   }
 }
 
 @media (max-width: 560px) {
-  .grid, .statsRow {
+  .grid {
     grid-template-columns: 1fr;
+  }
+  .statsRow {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .statCard {
+    padding: 12px 6px;
+  }
+  .statValue {
+    font-size: 1.4rem;
+  }
+  .statLabel {
+    font-size: 0.75rem;
   }
 }
