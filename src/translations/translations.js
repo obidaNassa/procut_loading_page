@@ -764,7 +764,7 @@ export const translations = {
       interactiveDemo: 'Live Demo',
       deepDive: 'Notification Engine',
       recommendations: 'AI Insights',
-      testimonials: 'Testimonials',
+      testimonials: 'Feedback',
       ctaBtn: 'Start Free Month',
       langSelect: 'Language',
       themeSelect: 'Theme',
