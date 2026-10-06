@@ -689,7 +689,7 @@ export const translations = {
       plan3Tagline: 'رسائل SMS وإشعارات بلا حدود لراحة بال تامة',
       plan3StaffToggleLabel: 'حدد عدد مزودي الخدمة / الموظفين في الصالون:',
       staffOption1: '1 موظف',
-      staffOption2: '2 مزودي خدمة (موظفين)',
+      staffOption2: '2 موظفين',
       staffOption3: '3 موظفين',
       plan3Price1: '119.99',
       plan3Price2: '159.99',
