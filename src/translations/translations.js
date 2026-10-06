@@ -350,10 +350,23 @@ export const translations = {
         {
           name: 'יוסי מזרחי',
           role: 'קליניקת SkinCare Pro, חיפה',
-          text: 'מנגנון המקדמות וההתראות המיידיות חסך לנו אלפי שקלים של ביטולי הרגע האחרון.',
+          text: 'היומן החכם מדהים! אני יכול לראות את הלו"ז של כל העובדים במקום אחד, והעסק מתנהל בעצמו.',
           avatar: '💆',
         },
+        {
+          name: 'ליאור כהן',
+          role: 'מספרת Lior Hair Design',
+          text: 'קישור ההזמנות אונליין עובד בשבילנו 24/7. אנחנו מתעוררים בבוקר ורואים תורים חדשים שנקבעו בלילה.',
+          avatar: '✂️',
+        },
+        {
+          name: 'שירה אהרון',
+          role: 'Shira Beauty SPA',
+          text: 'המערכת כל כך קלה לשימוש, גם בטלפון וגם במחשב. דף הנחיתה העסקי שקיבלנו נראה יוקרתי ומקצועי.',
+          avatar: '✨',
+        },
       ],
+      showMore: 'הצג עוד ביקורות',
     },
     cta: {
       title: 'מוכנים להקפיץ את העסק שלכם לרמה הבאה?',
@@ -728,10 +741,23 @@ export const translations = {
         {
           name: 'يوسف مصاروة',
           role: 'عيادة SkinCare Pro للبشرة',
-          text: 'ميزة حماية العربون والإشعارات الفورية وفّرت علينا آلاف الشواكل التي كانت تضيع بسبب إلغاءات اللحظة الأخيرة.',
+          text: 'التقويم الذكي مذهل! يمكنني رؤية جدول جميع الموظفين في مكان واحد، والعمل يدير نفسه.',
           avatar: '💆',
         },
+        {
+          name: 'ليور كوهين',
+          role: 'صالون Lior Hair Design',
+          text: 'رابط الحجز الأونلاين يعمل من أجلنا 24/7. نستيقظ في الصباح لنجد مواعيد جديدة تم حجزها ليلاً.',
+          avatar: '✂️',
+        },
+        {
+          name: 'شيرا أهارون',
+          role: 'Shira Beauty SPA',
+          text: 'النظام سهل الاستخدام للغاية، سواء على الهاتف أو الكمبيوتر. صفحة الهبوط التي حصلنا عليها تبدو احترافية وفخمة.',
+          avatar: '✨',
+        },
       ],
+      showMore: 'عرض المزيد من التقييمات',
     },
     cta: {
       title: 'هل أنت مستعد لنقل صالونك إلى مستوى آخر؟',
@@ -1106,10 +1132,23 @@ export const translations = {
         {
           name: 'Yossi Mizrahi',
           role: 'SkinCare Pro Clinic, Haifa',
-          text: 'Deposit protection and instantaneous notifications saved us thousands in lost revenue from last-minute cancellations.',
+          text: 'The smart calendar is amazing! I can view all staff schedules in one place, and the business runs itself.',
           avatar: '💆',
         },
+        {
+          name: 'Lior Cohen',
+          role: 'Lior Hair Design',
+          text: 'The 24/7 online booking link works for us nonstop. We wake up to new appointments booked overnight.',
+          avatar: '✂️',
+        },
+        {
+          name: 'Shira Aharon',
+          role: 'Shira Beauty SPA',
+          text: 'The system is so easy to use on both mobile and desktop. The business landing page we got looks incredibly premium.',
+          avatar: '✨',
+        },
       ],
+      showMore: 'Show more feedback',
     },
     cta: {
       title: 'Ready to elevate your salon to the next tier?',

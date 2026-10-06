@@ -1,10 +1,13 @@
+import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import styles from './Testimonials.module.css'
 
 export default function Testimonials() {
   const { t } = useLanguage()
+  const [showAll, setShowAll] = useState(false)
 
   const colors = ['var(--brand-1)', 'var(--brand-2)', '#f43f5e', '#a855f7', '#fb923c', '#22d3ee']
+  const visibleItems = showAll ? t.testimonials.items : t.testimonials.items.slice(0, 3)
 
   return (
     <section className={styles.section} id="testimonials" aria-label="Testimonials">
@@ -38,11 +41,11 @@ export default function Testimonials() {
         </div>
 
         <div className={styles.grid}>
-          {t.testimonials.items.map((item, i) => (
+          {visibleItems.map((item, i) => (
             <blockquote
               key={i}
               className={`${styles.card} animate-fadeInUp`}
-              style={{ animationDelay: `${i * 0.08}s` }}
+              style={{ animationDelay: `${(i % 3) * 0.08}s` }}
             >
               <div className={styles.stars}>
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -59,6 +62,17 @@ export default function Testimonials() {
             </blockquote>
           ))}
         </div>
+
+        {!showAll && t.testimonials.items.length > 3 && (
+          <div className={styles.showMoreContainer}>
+            <button 
+              className={`btn btn-outline ${styles.showMoreBtn}`}
+              onClick={() => setShowAll(true)}
+            >
+              {t.testimonials.showMore}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )
