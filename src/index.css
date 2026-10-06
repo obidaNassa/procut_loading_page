@@ -132,7 +132,7 @@
   --border-accent: rgba(201, 162, 75, 0.5);
 
   --gradient-primary: linear-gradient(135deg, #E9CF8F 0%, #C9A24B 48%, #9A7430 100%);
-  --gradient-hero:    radial-gradient(ellipse at 50% 0%, rgba(201,162,75,0.14) 0%, rgba(10,10,11,0) 70%);
+  --gradient-hero:    radial-gradient(ellipse at 50% 0%, rgba(201,162,75,0.04) 0%, rgba(10,10,11,0) 70%);
   --gradient-card:    linear-gradient(135deg, rgba(201,162,75,0.06) 0%, rgba(160,122,50,0.02) 100%);
 
   --shadow-sm:  0 1px 3px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,162,75,0.08);
