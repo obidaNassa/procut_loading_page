@@ -298,6 +298,23 @@
   transform: scale(1.1);
 }
 
+.themeToggleBtn {
+  background: var(--bg-glass-2);
+  border: 1px solid var(--border-subtle);
+  font-size: 1.1rem;
+  padding: 6px 12px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.themeToggleBtn:hover {
+  transform: scale(1.05);
+  border-color: var(--brand-1);
+}
+
 .themeIconActive {
   opacity: 1;
   background: rgba(var(--brand-1-rgb), 0.25);
