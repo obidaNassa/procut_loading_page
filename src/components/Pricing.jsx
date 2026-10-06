@@ -20,9 +20,8 @@ export default function Pricing() {
   ]
 
   const staffTiers = [
-    { label: t.pricing.staffOption1, price: '119.99' },
-    { label: t.pricing.staffOption2, price: '159.99' },
-    { label: t.pricing.staffOption3, price: '199.99' },
+    { label: lang === 'ar' ? 'حتى 3 موظفين' : lang === 'he' ? 'עד 3 אנשי צוות' : 'Up to 3 staff', price: '199.99' },
+    { label: lang === 'ar' ? '+4 موظفين' : lang === 'he' ? '4+ אנשי צוות' : '4+ staff', price: '239.99' },
   ]
 
   const waBaseUrl = (planTitle) => {
@@ -76,6 +75,10 @@ export default function Pricing() {
                 </span>
               </a>
 
+              <div className={styles.highlightItem}>
+                <span className={styles.checkIcon}>✓</span>
+                <span>{lang === 'ar' ? 'حتى 10 موظفين' : lang === 'he' ? 'עד 10 אנשי צוות' : 'Up to 10 staff'}</span>
+              </div>
               <div className={styles.highlightItem}>
                 <span className={styles.checkIcon}>✓</span>
                 <span>{t.pricing.plan1Feature2}</span>
@@ -151,11 +154,15 @@ export default function Pricing() {
 
               <div className={styles.highlightItem}>
                 <span className={styles.checkIcon}>✓</span>
+                <span>{lang === 'ar' ? 'حتى 10 موظفين' : lang === 'he' ? 'עד 10 אנשי צוות' : 'Up to 10 staff'}</span>
+              </div>
+              <div className={styles.highlightItem}>
+                <span className={styles.checkIcon}>✓</span>
                 <span>{t.pricing.plan1Feature2}</span>
               </div>
               <div className={styles.highlightItem}>
                 <span className={styles.checkIcon}>✓</span>
-                <span>{smsBundles[selectedSmsBundle].count} SMS {lang === 'ar' ? 'شهرياً' : lang === 'he' ? 'בחודש' : '/ month'}</span>
+                <span>{smsBundles[selectedSmsBundle].count} {lang === 'ar' ? 'شهرياً' : lang === 'he' ? 'בחודש' : '/ month'}</span>
               </div>
             </div>
 
@@ -227,7 +234,11 @@ export default function Pricing() {
               </a>
               <div className={styles.highlightItem}>
                 <span className={styles.checkIconAccent}>✓</span>
-                <span><strong>SMS ללא הגבלה (Unlimited)</strong></span>
+                <span>{t.pricing.plan1Feature2}</span>
+              </div>
+              <div className={styles.highlightItem}>
+                <span className={styles.checkIconAccent}>✓</span>
+                <span><strong>{lang === 'ar' ? 'رسائل SMS غير محدودة (Unlimited)' : lang === 'he' ? 'SMS ללא הגבלה (Unlimited)' : 'Unlimited SMS'}</strong></span>
               </div>
               <div className={styles.highlightItem}>
                 <span className={styles.checkIconAccent}>✓</span>
