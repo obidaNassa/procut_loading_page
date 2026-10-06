@@ -267,6 +267,7 @@ export default function Pricing() {
             </a>
           </article>
         </div>
+        </div>
 
         {/* Free trial footer reminder */}
         <div className={styles.freeTrialNotice}>
