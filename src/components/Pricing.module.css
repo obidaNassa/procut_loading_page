@@ -18,7 +18,37 @@
 
 .header {
   text-align: center;
+}
+
+.pricingLayout {
+  display: flex;
+  flex-direction: column;
+}
+
+.prominentBannerWrapper {
   margin-bottom: 36px;
+}
+
+.featureLink {
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  background: rgba(var(--brand-1-rgb), 0.05);
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  display: flex;
+}
+
+.featureLink:hover {
+  opacity: 0.9;
+  background: rgba(var(--brand-1-rgb), 0.1);
+}
+
+.featureLink .linkText {
+  color: var(--brand-1);
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .badge {
@@ -450,11 +480,20 @@
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 24px 0 50px;
+  .prominentBannerWrapper {
+    order: 3;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .plansGrid {
+    order: 2;
   }
   .header {
+    order: 1;
     margin-bottom: 22px;
+  }
+  .section {
+    padding: 24px 0 50px;
   }
   .planCard {
     padding: 22px 16px;

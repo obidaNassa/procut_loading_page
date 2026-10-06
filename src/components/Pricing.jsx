@@ -38,30 +38,28 @@ export default function Pricing() {
     <section className={styles.section} id="pricing" aria-label="Pricing and Packages">
       <div className={styles.bgBlob} aria-hidden="true" />
       <div className="container">
-        {/* Header */}
-        <div className={styles.header}>
-          <div className={`badge badge-primary ${styles.badge}`}>
-            <span>💎</span>
-            <span>{t.pricing.badge}</span>
-          </div>
-          <h2 className={`section-title ${styles.title}`}>
-            <span>{t.pricing.title}</span>
-            <br />
-            <span className="gradient-text">{t.pricing.titleGradient}</span>
-          </h2>
-
-          {/* CRITICAL PROMINENT ALERT BANNER */}
-          <div className={styles.prominentBanner}>
-            <div className={styles.bannerGlow} />
-            <div className={styles.bannerContent}>
-              <span className={styles.bannerIcon}>✨</span>
-              <p className={styles.bannerText}>{t.pricing.bannerAlert}</p>
+        <div className={styles.pricingLayout}>
+          {/* Header */}
+          <div className={styles.header}>
+            <div className={`badge badge-primary ${styles.badge}`}>
+              <span>💎</span>
+              <span>{t.pricing.badge}</span>
             </div>
           </div>
-        </div>
 
-        {/* 3 Main Packages Grid */}
-        <div className={styles.plansGrid}>
+          {/* CRITICAL PROMINENT ALERT BANNER */}
+          <div className={styles.prominentBannerWrapper}>
+            <div className={styles.prominentBanner}>
+              <div className={styles.bannerGlow} />
+              <div className={styles.bannerContent}>
+                <span className={styles.bannerIcon}>✨</span>
+                <p className={styles.bannerText}>{t.pricing.bannerAlert}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* 3 Main Packages Grid */}
+          <div className={styles.plansGrid}>
           {/* PACKAGE 1: Basic Plan (79.99 ₪) */}
           <article className={`${styles.planCard} ${styles.planBasic}`} id="plan-basic">
             <div className={styles.planTop}>
@@ -82,6 +80,12 @@ export default function Pricing() {
             </div>
 
             <div className={styles.featureHighlights}>
+              <a href="#features" className={`${styles.highlightItem} ${styles.featureLink}`}>
+                <span className={styles.checkIcon}>✓</span>
+                <span className={styles.linkText}>
+                  {lang === 'ar' ? 'تشمل جميع مميزات النظام الـ 15+' : lang === 'he' ? 'כולל את כל 15+ תכונות המערכת (לחץ לפירוט)' : 'Includes all 15+ platform features'}
+                </span>
+              </a>
               <div className={styles.highlightItem}>
                 <span className={styles.checkIcon}>✓</span>
                 <span>{t.pricing.plan1Feature1}</span>
@@ -152,6 +156,12 @@ export default function Pricing() {
             </div>
 
             <div className={styles.featureHighlights}>
+              <a href="#features" className={`${styles.highlightItem} ${styles.featureLink}`}>
+                <span className={styles.checkIcon}>✓</span>
+                <span className={styles.linkText}>
+                  {lang === 'ar' ? 'تشمل جميع مميزات النظام الـ 15+' : lang === 'he' ? 'כולל את כל 15+ תכונות המערכת (לחץ לפירוט)' : 'Includes all 15+ platform features'}
+                </span>
+              </a>
               <div className={styles.highlightItem}>
                 <span className={styles.checkIcon}>✓</span>
                 <span>{t.pricing.plan1Feature1}</span>
@@ -226,6 +236,12 @@ export default function Pricing() {
             </div>
 
             <div className={styles.featureHighlights}>
+              <a href="#features" className={`${styles.highlightItem} ${styles.featureLink}`}>
+                <span className={styles.checkIconAccent}>✓</span>
+                <span className={styles.linkText}>
+                  {lang === 'ar' ? 'تشمل جميع مميزات النظام الـ 15+' : lang === 'he' ? 'כולל את כל 15+ תכונות המערכת (לחץ לפירוט)' : 'Includes all 15+ platform features'}
+                </span>
+              </a>
               <div className={styles.highlightItem}>
                 <span className={styles.checkIconAccent}>✓</span>
                 <span>{t.pricing.plan1Feature1}</span>
@@ -250,19 +266,6 @@ export default function Pricing() {
               🚀 {t.pricing.plan3Cta}
             </a>
           </article>
-        </div>
-
-        {/* Guaranteed 100% Features Checklist Box */}
-        <div className={styles.featuresChecklistBox}>
-          <h4 className={styles.checklistTitle}>{t.pricing.allFeaturesIncludedHeader}</h4>
-          <div className={styles.checklistGrid}>
-            {t.features.items.map(f => (
-              <div key={f.id} className={styles.checklistItem}>
-                <span className={styles.checkBadge}>✓</span>
-                <span className={styles.checkText}>{f.title}</span>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Free trial footer reminder */}
