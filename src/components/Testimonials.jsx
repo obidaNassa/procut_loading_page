@@ -63,13 +63,13 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {!showAll && t.testimonials.items.length > 3 && (
+        {t.testimonials.items.length > 3 && (
           <div className={styles.showMoreContainer}>
             <button 
               className={`btn btn-outline ${styles.showMoreBtn}`}
-              onClick={() => setShowAll(true)}
+              onClick={() => setShowAll(!showAll)}
             >
-              {t.testimonials.showMore}
+              {showAll ? (t.testimonials.showLess || 'Show less') : t.testimonials.showMore}
             </button>
           </div>
         )}
