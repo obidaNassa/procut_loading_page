@@ -36,15 +36,6 @@ export default function Footer() {
             <p className={styles.brandDesc}>
               {t.footer.tagline}
             </p>
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`btn btn-primary ${styles.footerCta}`}
-              id="footer-whatsapp-btn"
-            >
-              💬 {t.footer.whatsapp} <bdi dir="ltr">({DISPLAY_PHONE})</bdi>
-            </a>
           </div>
 
           {/* Links */}
