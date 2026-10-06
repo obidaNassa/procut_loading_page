@@ -51,57 +51,15 @@ export default function Navbar() {
 
           {/* Actions: Language Switcher + Theme Switcher + CTA */}
           <div className={styles.actions}>
-            {/* Theme Selector (Desktop) */}
-            <div className={styles.themeSelector} role="group" aria-label={t.nav.themeSelect}>
-              <button
-                type="button"
-                className={`${styles.themeIconBtn} ${theme === 'default' ? styles.themeIconActive : ''}`}
-                onClick={() => setTheme('default')}
-                title={t.nav.themeDefault}
-              >
-                🌌
-              </button>
-              <button
-                type="button"
-                className={`${styles.themeIconBtn} ${theme === 'gold' ? styles.themeIconActiveGold : ''}`}
-                onClick={() => setTheme('gold')}
-                title={t.nav.themeGold}
-              >
-                👑
-              </button>
-              <button
-                type="button"
-                className={`${styles.themeIconBtn} ${theme === 'light' ? styles.themeIconActiveLight : ''}`}
-                onClick={() => setTheme('light')}
-                title={t.nav.themeLight}
-              >
-                ☀️
-              </button>
-              <button
-                type="button"
-                className={`${styles.themeIconBtn} ${theme === 'light-indigo' ? styles.themeIconActiveLight : ''}`}
-                onClick={() => setTheme('light-indigo')}
-                title={t.nav.themeLightIndigo}
-              >
-                💎
-              </button>
-              <button
-                type="button"
-                className={`${styles.themeIconBtn} ${theme === 'light-emerald' ? styles.themeIconActiveLight : ''}`}
-                onClick={() => setTheme('light-emerald')}
-                title={t.nav.themeLightEmerald}
-              >
-                🌿
-              </button>
-              <button
-                type="button"
-                className={`${styles.themeIconBtn} ${theme === 'light-mint' ? styles.themeIconActiveLight : ''}`}
-                onClick={() => setTheme('light-mint')}
-                title={t.nav.themeLightMint}
-              >
-                🌊
-              </button>
-            </div>
+            {/* Theme Toggle Button */}
+            <button
+              type="button"
+              className={styles.themeToggleBtn}
+              onClick={() => setTheme(theme === 'default' ? 'light' : 'default')}
+              title={theme === 'default' ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            >
+              {theme === 'default' ? '☀️' : '🌙'}
+            </button>
 
             {/* Language Selector */}
             <div className={styles.langSelector} role="group" aria-label={t.nav.langSelect}>
@@ -159,54 +117,6 @@ export default function Navbar() {
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}>
 
 
-        {/* Theme Selector inside Sandwich Menu */}
-        <div className={styles.mobileThemeBar}>
-          <span className={styles.themeLabel}>{t.nav.themeSelect}:</span>
-          <div className={styles.themeGrid}>
-            <button
-              className={`${styles.themeBtn} ${theme === 'default' ? styles.themeActive : ''}`}
-              onClick={() => { setTheme('default'); setMenuOpen(false); }}
-              title={t.nav.themeDefault}
-            >
-              <span>{t.nav.themeDefault}</span>
-            </button>
-            <button
-              className={`${styles.themeBtn} ${theme === 'gold' ? styles.themeActiveGold : ''}`}
-              onClick={() => { setTheme('gold'); setMenuOpen(false); }}
-              title={t.nav.themeGold}
-            >
-              <span>{t.nav.themeGold}</span>
-            </button>
-            <button
-              className={`${styles.themeBtn} ${theme === 'light' ? styles.themeActiveLight : ''}`}
-              onClick={() => { setTheme('light'); setMenuOpen(false); }}
-              title={t.nav.themeLight}
-            >
-              <span>{t.nav.themeLight}</span>
-            </button>
-            <button
-              className={`${styles.themeBtn} ${theme === 'light-indigo' ? styles.themeActiveLight : ''}`}
-              onClick={() => { setTheme('light-indigo'); setMenuOpen(false); }}
-              title={t.nav.themeLightIndigo}
-            >
-              <span>{t.nav.themeLightIndigo}</span>
-            </button>
-            <button
-              className={`${styles.themeBtn} ${theme === 'light-emerald' ? styles.themeActiveLight : ''}`}
-              onClick={() => { setTheme('light-emerald'); setMenuOpen(false); }}
-              title={t.nav.themeLightEmerald}
-            >
-              <span>{t.nav.themeLightEmerald}</span>
-            </button>
-            <button
-              className={`${styles.themeBtn} ${theme === 'light-mint' ? styles.themeActiveLight : ''}`}
-              onClick={() => { setTheme('light-mint'); setMenuOpen(false); }}
-              title={t.nav.themeLightMint}
-            >
-              <span>{t.nav.themeLightMint}</span>
-            </button>
-          </div>
-        </div>
 
         <ul className={styles.mobileLinks}>
           {navLinks.map((l, i) => (
