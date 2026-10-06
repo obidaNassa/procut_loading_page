@@ -87,10 +87,10 @@
 
 .planCard {
   position: relative;
-  background: rgba(var(--card-rgb), 0.7);
+  background: linear-gradient(180deg, rgba(var(--card-rgb), 0.9) 0%, rgba(var(--card-rgb), 0.95) 100%);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(var(--overlay-rgb), 0.08);
+  border: 1.5px solid rgba(var(--brand-1-rgb), 0.45);
   border-radius: 20px;
   padding: 28px 22px;
   display: flex;
@@ -99,34 +99,16 @@
   text-align: inherit;
   box-sizing: border-box;
   width: 100%;
+  box-shadow: 0 16px 50px rgba(var(--brand-1-rgb), 0.25);
 }
 
 .planCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(var(--brand-1-rgb), 0.15);
-}
-
-.planBasic:hover {
-  border-color: rgba(var(--brand-1-rgb), 0.4);
-}
-
-.planLimited:hover {
-  border-color: rgba(var(--brand-2-rgb), 0.4);
-}
-
-/* Unlimited plan (POPULAR) */
-.planUnlimited {
-  background: linear-gradient(180deg, rgba(var(--card-rgb), 0.9) 0%, rgba(var(--card-rgb), 0.95) 100%);
-  border: 1.5px solid rgba(var(--brand-1-rgb), 0.45);
-  box-shadow: 0 16px 50px rgba(var(--brand-1-rgb), 0.25);
-  transform: scale(1.02);
-}
-
-.planUnlimited:hover {
-  transform: scale(1.03) translateY(-4px);
   border-color: var(--brand-1);
   box-shadow: 0 24px 60px rgba(var(--brand-1-rgb), 0.35);
 }
+
+
 
 .popularBadge {
   position: absolute;

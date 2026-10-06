@@ -100,7 +100,7 @@ export default function Pricing() {
               href={waBaseUrl(t.pricing.plan1Name)}
               target="_blank"
               rel="noopener noreferrer"
-              className={`btn btn-outline ${styles.planBtn}`}
+              className={`btn btn-primary btn-lg ${styles.planBtn} ${styles.planBtnGlow}`}
               id="cta-plan-basic"
             >
               🎁 {t.pricing.plan1Cta}
@@ -244,7 +244,7 @@ export default function Pricing() {
               href={waBaseUrl(`${t.pricing.plan3Name} (${staffTiers[selectedStaffTier].label})`)}
               target="_blank"
               rel="noopener noreferrer"
-              className={`btn btn-outline ${styles.planBtn}`}
+              className={`btn btn-primary btn-lg ${styles.planBtn} ${styles.planBtnGlow}`}
               id="cta-plan-unlimited"
             >
               🚀 {t.pricing.plan3Cta}
