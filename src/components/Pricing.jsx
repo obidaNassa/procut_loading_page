@@ -79,6 +79,11 @@ export default function Pricing() {
 
               <div className={styles.highlightItem}>
                 <span className={styles.checkIcon}>✓</span>
+                <span>{lang === 'ar' ? 'موقع إلكتروني وتطبيق مخصص' : lang === 'he' ? 'כולל אתר ייעודי ואפליקציה' : 'Dedicated website & application'}</span>
+              </div>
+
+              <div className={styles.highlightItem}>
+                <span className={styles.checkIcon}>✓</span>
                 <span>{lang === 'ar' ? 'حتى 10 موظفين' : lang === 'he' ? 'עד 10 אנשי צוות' : 'Up to 10 staff'}</span>
               </div>
               <div className={styles.highlightItem}>
@@ -153,6 +158,11 @@ export default function Pricing() {
                   {lang === 'ar' ? 'تشمل جميع مميزات النظام الـ 16' : lang === 'he' ? 'כולל את כל 16 תכונות המערכת (לחץ לפירוט)' : 'Includes all 16 platform features'}
                 </span>
               </a>
+
+              <div className={styles.highlightItem}>
+                <span className={styles.checkIcon}>✓</span>
+                <span>{lang === 'ar' ? 'موقع إلكتروني وتطبيق مخصص' : lang === 'he' ? 'כולל אתר ייעודי ואפליקציה' : 'Dedicated website & application'}</span>
+              </div>
 
               <div className={styles.highlightItem}>
                 <span className={styles.checkIcon}>✓</span>
@@ -234,6 +244,10 @@ export default function Pricing() {
                   {lang === 'ar' ? 'تشمل جميع مميزات النظام الـ 16' : lang === 'he' ? 'כולל את כל 16 תכונות המערכת (לחץ לפירוט)' : 'Includes all 16 platform features'}
                 </span>
               </a>
+              <div className={styles.highlightItem}>
+                <span className={styles.checkIconAccent}>✓</span>
+                <span>{lang === 'ar' ? 'موقع إلكتروني وتطبيق مخصص' : lang === 'he' ? 'כולל אתר ייעודי ואפליקציה' : 'Dedicated website & application'}</span>
+              </div>
               <div className={styles.highlightItem}>
                 <span className={styles.checkIconAccent}>✓</span>
                 <span>{t.pricing.plan1Feature2}</span>
