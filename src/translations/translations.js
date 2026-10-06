@@ -280,7 +280,7 @@ export const translations = {
       ],
     },
     pricing: {
-      badge: 'חבילות ומחירים שקופים',
+      badge: 'חבילות ומחירים שקופים - ללא אותיות קטנות',
       title: 'השקעה חכמה ומדויקת',
       titleGradient: 'לתשואה הגבוהה ביותר',
       bannerAlert: '✨ שימו לב: כל 3 החבילות כוללות 100% מתכונות המערכת ללא שום החרגות!',
@@ -658,7 +658,7 @@ export const translations = {
       ],
     },
     pricing: {
-      badge: 'الأسعار والباقات الشفافة',
+      badge: 'الأسعار والباقات الشفافة - بدون شروط خفية',
       title: 'استثمار بسيط وواضح',
       titleGradient: 'لعائد يفوق التوقعات',
       bannerAlert: '✨ تنبيه هام: جميع الباقات الثلاث تتضمن 100% من ميزات النظام الـ 16 دون أي استثناء!',
@@ -1036,7 +1036,7 @@ export const translations = {
       ],
     },
     pricing: {
-      badge: 'Transparent Pricing & Packages',
+      badge: 'Transparent Pricing & Packages - No Small Print',
       title: 'Predictable, Honest Investment',
       titleGradient: 'Maximum Return on Investment',
       bannerAlert: '✨ Note: All 3 packages include 100% of the 16 core system features with no exceptions!',
