@@ -372,7 +372,7 @@
 }
 
 .checkIconAccent {
-  color: var(--accent-600);
+  color: #34d399;
   font-weight: 900;
   font-size: 1rem;
   flex-shrink: 0;
