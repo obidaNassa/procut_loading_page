@@ -293,7 +293,7 @@ export const translations = {
       plan1Feature1: 'כל 16 תכונות המערכת ללא יוצא מן הכלל',
       plan1Feature2: 'התראות ותזכורות אוטומטיות (Notifications)',
       plan1Feature3: 'ללא הודעות SMS',
-      plan1Cta: 'התחל חודש חינם',
+      plan1Cta: 'בחר בחבילה הבסיסית',
 
       plan2Name: 'חבילת Limited SMS',
       plan2Price: '79.99',
@@ -304,7 +304,7 @@ export const translations = {
       smsBundle2: '2,000 SMS (+40 ₪) — סה"כ 119.99 ₪',
       smsBundle3: '3,000 SMS (+60 ₪) — סה"כ 139.99 ₪',
       smsBundle5: '5,000 SMS (+100 ₪) — סה"כ 179.99 ₪',
-      plan2Cta: 'בחר חבילת Limited SMS',
+      plan2Cta: 'בחר בחבילת Limited SMS',
 
       plan3Name: 'חבילת Unlimited SMS',
       plan3Popular: '⭐ החבילה המבוקשת ביותר למספרות',
@@ -316,7 +316,7 @@ export const translations = {
       plan3Price1: '119.99',
       plan3Price2: '159.99',
       plan3Price3: '199.99',
-      plan3Cta: 'התחל עם Unlimited SMS',
+      plan3Cta: 'בחר בחבילת Unlimited SMS',
       allFeaturesIncludedHeader: 'כל החבילות כוללות:',
     },
     supportCards: {
@@ -671,7 +671,7 @@ export const translations = {
       plan1Feature1: 'جميع ميزات النظام الـ 16 كاملة',
       plan1Feature2: 'إشعارات وتذكيرات تلقائية (Notifications)',
       plan1Feature3: 'بدون حزم رسائل نصية SMS',
-      plan1Cta: 'ابدأ مجاناً الآن',
+      plan1Cta: 'اختر الباقة الأساسية',
 
       plan2Name: 'باقة Limited SMS',
       plan2Price: '79.99',
@@ -682,7 +682,7 @@ export const translations = {
       smsBundle2: '2,000 SMS (+40 ₪) — الإجمالي 119.99 ₪',
       smsBundle3: '3,000 SMS (+60 ₪) — الإجمالي 139.99 ₪',
       smsBundle5: '5,000 SMS (+100 ₪) — الإجمالي 179.99 ₪',
-      plan2Cta: 'اختيار باقة Limited SMS',
+      plan2Cta: 'اختر باقة Limited SMS',
 
       plan3Name: 'باقة Unlimited SMS',
       plan3Popular: '⭐ الأكثر طلباً للمراكز والصالونات',
@@ -694,7 +694,7 @@ export const translations = {
       plan3Price1: '119.99',
       plan3Price2: '159.99',
       plan3Price3: '199.99',
-      plan3Cta: 'انطلق مع Unlimited SMS',
+      plan3Cta: 'اختر باقة Unlimited SMS',
       allFeaturesIncludedHeader: 'تشمل جميع الباقات:',
     },
     supportCards: {
@@ -1049,7 +1049,7 @@ export const translations = {
       plan1Feature1: 'All 16 core system features included',
       plan1Feature2: 'Automated alerts & reminders (Notifications)',
       plan1Feature3: 'Without SMS bundles',
-      plan1Cta: 'Start Free Month',
+      plan1Cta: 'Choose Basic Package',
 
       plan2Name: 'Limited SMS Package',
       plan2Price: '79.99',
@@ -1060,7 +1060,7 @@ export const translations = {
       smsBundle2: '2,000 SMS (+40 ₪) — Total 119.99 ₪',
       smsBundle3: '3,000 SMS (+60 ₪) — Total 139.99 ₪',
       smsBundle5: '5,000 SMS (+100 ₪) — Total 179.99 ₪',
-      plan2Cta: 'Select Limited SMS Plan',
+      plan2Cta: 'Choose Limited SMS',
 
       plan3Name: 'Unlimited SMS Package',
       plan3Popular: '⭐ Most Popular for High-Volume Salons',
