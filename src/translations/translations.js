@@ -1114,7 +1114,7 @@ export const translations = {
     cta: {
       title: 'Ready to elevate your salon to the next tier?',
       subtitle: 'Join hundreds of beauty salons, barbers, nail artists, and skincare clinics running smarter with ProCut.',
-      primaryBtn: 'Start Your Free Month (+972 52-533-6954)',
+      primaryBtn: 'Start Your Free Month',
       badge1: '100% Free Month',
       badge2: '10-Minute Setup',
       badge3: 'Zero Commitment',
