@@ -20,8 +20,10 @@ export default function Pricing() {
   ]
 
   const staffTiers = [
-    { label: lang === 'ar' ? 'حتى 3 موظفين' : lang === 'he' ? 'עד 3 אנשי צוות' : 'Up to 3 staff', price: '199.99' },
-    { label: lang === 'ar' ? '+4 موظفين' : lang === 'he' ? '4+ אנשי צוות' : '4+ staff', price: '239.99' },
+    { label: t.pricing.staffOption1, price: '119.99' },
+    { label: t.pricing.staffOption2, price: '159.99' },
+    { label: t.pricing.staffOption3, price: '199.99' },
+    { label: lang === 'ar' ? '4+ موظفين' : lang === 'he' ? '4+ אנשי צוות' : '4+ staff', price: '239.99' },
   ]
 
   const waBaseUrl = (planTitle) => {
