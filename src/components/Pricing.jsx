@@ -210,16 +210,16 @@ export default function Pricing() {
               <label className={styles.interactiveLabel}>
                 {t.pricing.plan3StaffToggleLabel}
               </label>
-              <div className={styles.staffBundleOptions}>
+              <div className={styles.bundleOptions}>
                 {staffTiers.map((st, i) => (
                   <button
                     key={i}
                     type="button"
-                    className={`${styles.staffBundleBtn} ${selectedStaffTier === i ? styles.staffBundleBtnActive : ''}`}
+                    className={`${styles.bundleBtn} ${selectedStaffTier === i ? styles.bundleBtnActive : ''}`}
                     onClick={() => setSelectedStaffTier(i)}
                   >
-                    <span className={styles.staffBundleCount}>{st.label}</span>
-                    <span className={styles.staffBundlePrice}>₪{st.price}</span>
+                    <span className={styles.bundleCount}>{st.label}</span>
+                    <span className={styles.bundleExtra}>₪{st.price}</span>
                   </button>
                 ))}
               </div>
