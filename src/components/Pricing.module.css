@@ -383,7 +383,8 @@
 }
 
 .noSmsItem {
-  color: var(--text-muted);
+  color: #f43f5e;
+  font-weight: 700;
 }
 
 .planBtn {

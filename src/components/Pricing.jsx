@@ -92,7 +92,7 @@ export default function Pricing() {
                 <span>{t.pricing.plan1Feature2}</span>
               </div>
               <div className={`${styles.highlightItem} ${styles.noSmsItem}`}>
-                <span className={styles.infoIcon}>ℹ️</span>
+                <span className={styles.infoIcon}>❌</span>
                 <span>{t.pricing.plan1Feature3}</span>
               </div>
             </div>
