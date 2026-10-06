@@ -168,3 +168,12 @@
     font-size: 0.75rem;
   }
 }
+
+.showMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.showMoreBtn {
+  min-width: 200px;
+}
