@@ -29,6 +29,18 @@ export default function InteractiveDemo() {
 
   const times = ['10:00', '11:30', '13:00', '15:15', '16:45', '18:00', '19:15', '20:30']
 
+  // Pick the active-language value from a {he, ar, en} object (falls back to Hebrew)
+  const tr = (v) => (v && typeof v === 'object') ? (v[lang] || v.he) : v
+
+  // "30 דק׳" -> "30 דק׳" / "30 دقيقة" / "30 min"
+  const formatTime = (time) => {
+    const mins = parseInt(time, 10)
+    if (Number.isNaN(mins)) return time
+    return lang === 'ar' ? `${mins} دقيقة` : lang === 'he' ? `${mins} דק׳` : `${mins} min`
+  }
+
+  const sampleName = lang === 'ar' ? 'محمد أحمد' : lang === 'he' ? 'דניאל כהן' : 'Daniel Cohen'
+
   const handleSalonChange = (salonId) => {
     setSelectedSalonId(salonId)
     setSelectedStaff(0)
@@ -249,7 +261,7 @@ export default function InteractiveDemo() {
                         </span>
                       </h4>
                       <p className={styles.procutSectionSubtitle}>
-                        {lang === 'ar' ? 'اختر مقدم الخدمة المفضل لديك' : lang === 'he' ? 'בחרו את הספר או נותן השירות המועדף עליכם.' : 'Choose your preferred specialist.'}
+                        {lang === 'ar' ? 'اختر الحلاق أو مقدّم الخدمة المفضّل لديك.' : lang === 'he' ? 'בחרו את הספר או נותן השירות המועדף עליכם.' : 'Choose your preferred barber or specialist.'}
                       </p>
                     </div>
 
@@ -266,7 +278,7 @@ export default function InteractiveDemo() {
                             <div className={`${styles.staffAvatarHalo} ${isStActive ? styles.staffAvatarActive : ''}`}>
                               <span>{st.avatar}</span>
                             </div>
-                            <span className={styles.staffName}>{st.name}</span>
+                            <span className={styles.staffName}>{tr(st.name)}</span>
                           </button>
                         )
                       })}
@@ -283,7 +295,7 @@ export default function InteractiveDemo() {
                         </span>
                       </h4>
                       <p className={styles.procutSectionSubtitle}>
-                        {lang === 'ar' ? 'تحدد هذه الخطوة مدة الخدمة وسعرها.' : lang === 'he' ? 'בחירה זו קובעת את משך הטיפול ואת המחיר.' : 'This sets treatment duration and price.'}
+                        {lang === 'ar' ? 'اختيارك يحدد مدة الخدمة وسعرها.' : lang === 'he' ? 'בחירה זו קובעת את משך הטיפול ואת המחיר.' : 'Your choice sets the duration and price.'}
                       </p>
                     </div>
 
@@ -309,13 +321,13 @@ export default function InteractiveDemo() {
                                   </svg>
                                 </div>
                                 <div>
-                                  <div className={styles.serviceName}>{srv.name}</div>
-                                  <div className={styles.serviceTime}>{srv.time}</div>
+                                  <div className={styles.serviceName}>{tr(srv.name)}</div>
+                                  <div className={styles.serviceTime}>{formatTime(srv.time)}</div>
                                 </div>
                               </div>
                               <div className={styles.servicePrice}>{srv.price}</div>
                             </div>
-                            <p className={styles.serviceDesc}>{srv.desc}</p>
+                            <p className={styles.serviceDesc}>{tr(srv.desc)}</p>
                           </button>
                         )
                       })}
@@ -332,7 +344,7 @@ export default function InteractiveDemo() {
                         <path d="M3 10h18"></path>
                       </svg>
                       <h4 className={styles.bookingCardTitle}>
-                        {lang === 'ar' ? 'حجز موعد' : lang === 'he' ? 'קביעת תור' : 'Schedule Appointment'}
+                        {lang === 'ar' ? 'حجز موعد' : lang === 'he' ? 'קביעת תור' : 'Book an Appointment'}
                       </h4>
                     </div>
 
@@ -397,10 +409,11 @@ export default function InteractiveDemo() {
                         </label>
                         <div className={styles.inputWrapper}>
                           <input
+                            key={lang}
                             type="text"
                             required
-                            defaultValue="ישראל ישראלי"
-                            placeholder="ישראל ישראלי"
+                            defaultValue={sampleName}
+                            placeholder={sampleName}
                             className={styles.procutInput}
                           />
                         </div>
@@ -430,7 +443,7 @@ export default function InteractiveDemo() {
                         {lang === 'ar'
                           ? `تأكيد الموعد (${activeService.price})`
                           : lang === 'he'
-                          ? `קבלת קוד אימות (${activeService.price})`
+                          ? `אישור התור (${activeService.price})`
                           : `Confirm Booking (${activeService.price})`}
                       </button>
                     </form>
@@ -441,31 +454,31 @@ export default function InteractiveDemo() {
                 <div className={styles.successScreen}>
                   <div className={styles.successBadgeCircle}>✓</div>
                   <h3 className={styles.successTitle}>
-                    {lang === 'ar' ? 'تم تأكيد موعدك بنجاح!' : lang === 'he' ? 'התור נקבע בהצלחה!' : 'Booking Confirmed!'}
+                    {lang === 'ar' ? 'تم حجز موعدك بنجاح!' : lang === 'he' ? 'התור נקבע בהצלחה!' : 'Your appointment is booked!'}
                   </h3>
                   <p className={styles.successSubtitle}>
                     {lang === 'ar'
-                      ? 'تم إرسال رسالة SMS وتذكير أوتوماتيكي إلى هاتفك.'
+                      ? 'أُرسلت إلى هاتفك رسالة SMS للتأكيد مع تذكير تلقائي.'
                       : lang === 'he'
                       ? 'הודעת SMS ותזכורת נשלחו אוטומטית למספר שלך.'
-                      : 'An automated SMS confirmation has been sent.'}
+                      : 'A confirmation SMS and an automatic reminder were sent to your phone.'}
                   </p>
 
                   <div className={styles.receiptCard}>
                     <div className={styles.receiptRow}>
-                      <span>{lang === 'ar' ? 'الصالون:' : lang === 'he' ? 'עסק:' : 'Salon:'}</span>
+                      <span>{lang === 'ar' ? 'المحل:' : lang === 'he' ? 'עסק:' : 'Business:'}</span>
                       <strong>{currentSalon.name}</strong>
                     </div>
                     <div className={styles.receiptRow}>
                       <span>{lang === 'ar' ? 'الخدمة:' : lang === 'he' ? 'טיפול:' : 'Service:'}</span>
-                      <strong>{activeService.name}</strong>
+                      <strong>{tr(activeService.name)}</strong>
                     </div>
                     <div className={styles.receiptRow}>
-                      <span>{lang === 'ar' ? 'مقدم الخدمة:' : lang === 'he' ? 'איש צוות:' : 'Specialist:'}</span>
-                      <strong>{activeStaff.name}</strong>
+                      <span>{lang === 'ar' ? 'مقدّم الخدمة:' : lang === 'he' ? 'איש צוות:' : 'Staff:'}</span>
+                      <strong>{tr(activeStaff.name)}</strong>
                     </div>
                     <div className={styles.receiptRow}>
-                      <span>{lang === 'ar' ? 'الموعد:' : lang === 'he' ? 'מועד:' : 'Schedule:'}</span>
+                      <span>{lang === 'ar' ? 'الموعد:' : lang === 'he' ? 'מועד:' : 'When:'}</span>
                       <strong>{dates[selectedDateIndex].day} ({dates[selectedDateIndex].date}) {selectedTime}</strong>
                     </div>
                     <div className={styles.receiptRow}>
@@ -480,7 +493,7 @@ export default function InteractiveDemo() {
                       className={styles.resetBtn}
                       onClick={() => setBooked(false)}
                     >
-                      🔄 {lang === 'ar' ? 'حجز موعد إضافي' : lang === 'he' ? 'קבע תור נוסף לדוגמה' : 'Book Another Appointment'}
+                      🔄 {lang === 'ar' ? 'حجز موعد تجريبي آخر' : lang === 'he' ? 'קבע תור נוסף לדוגמה' : 'Book Another Demo Appointment'}
                     </button>
                   </div>
                 </div>
@@ -507,7 +520,7 @@ export default function InteractiveDemo() {
           >
             <span>🌐</span>
             <span>
-              {lang === 'ar' ? `زيارة الموقع الحي الأصلي: procut.me/${currentSalon.slug}` : lang === 'he' ? `ביקור באתר המקורי: procut.me/${currentSalon.slug}` : `Visit Live Website: procut.me/${currentSalon.slug}`}
+              {lang === 'ar' ? `زيارة الموقع الحقيقي: procut.me/${currentSalon.slug}` : lang === 'he' ? `ביקור באתר המקורי: procut.me/${currentSalon.slug}` : `Visit Live Website: procut.me/${currentSalon.slug}`}
             </span>
             <span>↗</span>
           </a>
