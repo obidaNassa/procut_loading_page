@@ -47,17 +47,6 @@ export default function Pricing() {
             </div>
           </div>
 
-          {/* CRITICAL PROMINENT ALERT BANNER */}
-          <div className={styles.prominentBannerWrapper}>
-            <div className={styles.prominentBanner}>
-              <div className={styles.bannerGlow} />
-              <div className={styles.bannerContent}>
-                <span className={styles.bannerIcon}>✨</span>
-                <p className={styles.bannerText}>{t.pricing.bannerAlert}</p>
-              </div>
-            </div>
-          </div>
-
           {/* 3 Main Packages Grid */}
           <div className={styles.plansGrid}>
           {/* PACKAGE 1: Basic Plan (79.99 ₪) */}
