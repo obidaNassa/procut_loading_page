@@ -53,14 +53,24 @@ export default function Hero() {
             {t.hero.subtext}
           </p>
 
-          {/* Target Business Types Tags */}
-          <div className={`animate-fadeInUp delay-250 ${styles.serviceTags}`}>
-            {services.map(s => (
-              <span key={s.label} className={styles.serviceTag}>
-                <span>{s.icon}</span>
-                <span>{s.label}</span>
-              </span>
-            ))}
+          {/* Target Business Types Tags (Marquee) */}
+          <div className={`animate-fadeInUp delay-250 ${styles.marqueeContainer}`}>
+            <div className={styles.serviceTags}>
+              {/* Original Set */}
+              {services.map(s => (
+                <span key={s.label} className={styles.serviceTag}>
+                  <span>{s.icon}</span>
+                  <span>{s.label}</span>
+                </span>
+              ))}
+              {/* Duplicate Set for Infinite Loop */}
+              {services.map(s => (
+                <span key={s.label + '-dup'} className={styles.serviceTag}>
+                  <span>{s.icon}</span>
+                  <span>{s.label}</span>
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* CTAs */}
