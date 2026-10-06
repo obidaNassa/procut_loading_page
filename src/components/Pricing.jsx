@@ -23,7 +23,7 @@ export default function Pricing() {
     { label: t.pricing.staffOption1, price: '119.99' },
     { label: t.pricing.staffOption2, price: '159.99' },
     { label: t.pricing.staffOption3, price: '199.99' },
-    { label: lang === 'ar' ? '4 موظفين فما فوق' : lang === 'he' ? '4 אנשי צוות ומעלה' : '4+ Staff Members', price: '239.99' },
+    { label: lang === 'ar' ? '4 موظفين فما فوق' : lang === 'he' ? '4 אנשי צוות ומעלה' : '4 Staff Members and more', price: '239.99' },
   ]
 
   const waBaseUrl = (planTitle) => {
