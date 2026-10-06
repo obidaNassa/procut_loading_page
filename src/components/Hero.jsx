@@ -6,7 +6,7 @@ export default function Hero() {
 
   const services = [
     { icon: '✂️', label: t.lang === 'ar' ? 'صالونات شعر' : t.lang === 'he' ? 'עיצוב שיער' : 'Hair Salons' },
-    { icon: '💈', label: t.lang === 'ar' ? 'حلاقين وباربر' : t.lang === 'he' ? 'ברברשופ' : 'Barbers' },
+    { icon: '💈', label: t.lang === 'ar' ? 'حلاقين وباربر' : t.lang === 'he' ? 'מספרת גברים' : 'Barbers' },
     { icon: '💅', label: t.lang === 'ar' ? 'مراكز أظافر' : t.lang === 'he' ? 'מכוני ציפורניים' : 'Nail Studios' },
     { icon: '💆', label: t.lang === 'ar' ? 'عيادات بشرة' : t.lang === 'he' ? 'טיפוח ועור' : 'Skincare Clinics' },
     { icon: '🎨', label: t.lang === 'ar' ? 'ميك آب وتجميل' : t.lang === 'he' ? 'איפור ויופי' : 'Makeup & Beauty' },

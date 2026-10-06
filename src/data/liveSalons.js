@@ -5,7 +5,7 @@ export const LIVE_SALONS = [
     url: 'https://procut.me/barbershop26',
     name: 'Barbershop 26',
     category: {
-      he: 'ברברשופ & עיצוב שיער',
+      he: 'מספרת גברים & עיצוב שיער',
       ar: 'صالون حلاقة ورجالي',
       en: 'Barbershop & Men Grooming',
     },
@@ -82,7 +82,7 @@ export const LIVE_SALONS = [
     url: 'https://procut.me/thegaragebarbershop',
     name: 'The Garage Barbershop',
     category: {
-      he: 'ברברשופ קונספט וינטג׳',
+      he: 'מספרת גברים קונספט וינטג׳',
       ar: 'باربر شوب كلاسيكي',
       en: 'Vintage Concept Barbershop',
     },
