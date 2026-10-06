@@ -103,7 +103,7 @@ export default function Pricing() {
               className={`btn btn-primary btn-lg ${styles.planBtn} ${styles.planBtnGlow}`}
               id="cta-plan-basic"
             >
-              🎁 {t.pricing.plan1Cta}
+              {t.pricing.plan1Cta}
             </a>
           </article>
 
@@ -269,7 +269,7 @@ export default function Pricing() {
               className={`btn btn-primary btn-lg ${styles.planBtn} ${styles.planBtnGlow}`}
               id="cta-plan-unlimited"
             >
-              🚀 {t.pricing.plan3Cta}
+              {t.pricing.plan3Cta}
             </a>
           </article>
         </div>
