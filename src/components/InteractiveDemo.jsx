@@ -6,8 +6,8 @@ import styles from './InteractiveDemo.module.css'
 export default function InteractiveDemo() {
   const { t, lang } = useLanguage()
 
-  // Selected Salon (Default to Barbershop 26)
-  const [selectedSalonId, setSelectedSalonId] = useState('barbershop26')
+  // Selected Salon (Default to Beauty & Hair)
+  const [selectedSalonId, setSelectedSalonId] = useState('beautyandhair')
   const currentSalon = LIVE_SALONS.find(s => s.id === selectedSalonId) || LIVE_SALONS[0]
 
   // Booking states
