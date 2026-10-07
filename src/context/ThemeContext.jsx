@@ -4,7 +4,7 @@ const ThemeContext = createContext()
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('procut_theme') || 'default'
+    return localStorage.getItem('procut_theme') || 'gold'
   })
 
   useEffect(() => {
