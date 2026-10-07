@@ -15,7 +15,7 @@ export default function Footer() {
     ],
     contact: [
       { label: `WhatsApp: ${DISPLAY_PHONE}`, href: waUrl },
-      { label: lang === 'ar' ? 'دخول لوحة التحكم' : lang === 'he' ? 'כניסת בעלים' : 'Owner Login', href: 'https://procut.me' },
+      { label: lang === 'ar' ? 'دخول لوحة التحكم' : lang === 'he' ? 'כניסת בעלים' : 'Owner Login', href: 'https://procut.me/login' },
     ],
   }
 
