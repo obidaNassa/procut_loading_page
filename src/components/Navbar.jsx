@@ -30,8 +30,8 @@ export default function Navbar() {
           <a href="#" className={styles.logo} aria-label="ProCut Home">
             <div className={styles.logoBadge}>
               <span className={styles.logoIcon}>
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M5 3.5A1.5 1.5 0 0 1 6.5 2H14a7 7 0 0 1 7 7c0 3.866-3.134 7-7 7h-4v4.5a1.5 1.5 0 0 1-3 0v-17zm5 3.5v4h4a2 2 0 1 0 0-4h-4z" />
+                <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C12 7.523 7.523 12 2 12C7.523 12 12 16.477 12 22C12 16.477 16.477 12 22 12C16.477 12 12 7.523 12 2Z" />
                 </svg>
               </span>
             </div>
