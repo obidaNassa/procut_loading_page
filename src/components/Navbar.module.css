@@ -113,6 +113,8 @@
 }
 
 .themeIcon {
+  width: 17px;
+  height: 17px;
   display: block;
   transition: transform 0.3s ease;
 }
@@ -280,9 +282,25 @@
   .links, .navCta { display: none; }
   .hamburger { display: flex; }
   .mobileMenu { display: block; }
+  .themeToggleBtn {
+    width: 30px;
+    height: 30px;
+  }
+  .themeIcon {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 @media (max-width: 480px) {
   .logoText { font-size: 1.25rem; }
   .langBtn { padding: 2px 5px; font-size: 0.72rem; }
+  .themeToggleBtn {
+    width: 28px;
+    height: 28px;
+  }
+  .themeIcon {
+    width: 13.5px;
+    height: 13.5px;
+  }
 }
