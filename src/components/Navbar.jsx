@@ -29,14 +29,17 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className={styles.logo} aria-label="ProCut Home">
             <div className={styles.logoBadge}>
-              <span className={styles.logoIcon}>✂</span>
+              <span className={styles.logoIcon}>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M5 3.5A1.5 1.5 0 0 1 6.5 2H14a7 7 0 0 1 7 7c0 3.866-3.134 7-7 7h-4v4.5a1.5 1.5 0 0 1-3 0v-17zm5 3.5v4h4a2 2 0 1 0 0-4h-4z" />
+                </svg>
+              </span>
             </div>
             <div className={styles.logoTextGroup}>
               <span className={styles.logoText}>
                 <span className={styles.logoPro}>Pro</span>
                 <span className={styles.logoCut}>Cut</span>
               </span>
-              <span className={styles.logoSub}>SALON OS</span>
             </div>
           </a>
 
