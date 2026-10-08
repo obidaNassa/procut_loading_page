@@ -94,10 +94,10 @@ export default function InteractiveDemo() {
           </h2>
           <p className={`section-subtitle ${styles.subtitle}`}>
             {lang === 'ar'
-              ? 'جرّب نظام الحجز الحي لـ 8 صالونات ومراكز تجميل رائدة تعمل بنظام ProCut الحقيقي'
+              ? `جرّب نظام الحجز الحي لـ ${LIVE_SALONS.length} صالونات ومراكز تجميل رائدة تعمل بنظام ProCut الحقيقي`
               : lang === 'he'
-              ? 'התנסו בסימולציית ההזמנה החיה של 8 עסקים מובילים שפועלים על מערכת ProCut'
-              : 'Experience the live booking engine of 8 premier salons powered by ProCut'}
+              ? `התנסו בסימולציית ההזמנה החיה של ${LIVE_SALONS.length} עסקים מובילים שפועלים על מערכת ProCut`
+              : `Experience the live booking engine of ${LIVE_SALONS.length} premier salons powered by ProCut`}
           </p>
         </div>
 
