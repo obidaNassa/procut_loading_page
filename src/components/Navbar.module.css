@@ -30,39 +30,15 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.logoBadge {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(var(--brand-1-rgb), 0.45);
-  flex-shrink: 0;
-}
-
-.logoIcon {
-  font-size: 1.15rem;
-  color: var(--on-brand);
-}
-
-.logoTextGroup {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
 .logoText {
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 900;
   letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .logoPro { color: var(--text-primary); }
@@ -71,14 +47,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.logoSub {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--text-secondary);
-  text-transform: uppercase;
 }
 
 /* Desktop links */
@@ -127,14 +95,18 @@
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   backdrop-filter: blur(10px);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
-.themeToggleBtn:hover {
-  background: rgba(var(--overlay-rgb), 0.12);
-  border-color: var(--border-accent);
-  color: var(--brand-1);
-  transform: translateY(-2px) rotate(15deg);
-  box-shadow: 0 4px 12px rgba(var(--brand-1-rgb), 0.25);
+@media (hover: hover) and (pointer: fine) {
+  .themeToggleBtn:hover {
+    background: rgba(var(--overlay-rgb), 0.12);
+    border-color: var(--border-accent);
+    color: var(--brand-1);
+    transform: translateY(-2px) rotate(15deg);
+    box-shadow: 0 4px 12px rgba(var(--brand-1-rgb), 0.25);
+  }
 }
 
 .themeToggleBtn:active {
@@ -441,8 +413,6 @@
 }
 
 @media (max-width: 480px) {
-  .logoText { font-size: 1.2rem; }
-  .logoBadge { width: 34px; height: 34px; border-radius: 8px; }
-  .logoIcon { font-size: 1rem; }
+  .logoText { font-size: 1.25rem; }
   .langBtn { padding: 2px 5px; font-size: 0.72rem; }
 }

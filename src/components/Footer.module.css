@@ -26,25 +26,12 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   margin-bottom: 16px;
   text-decoration: none;
 }
 
-.logoIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
-  border-radius: 10px;
-  font-size: 1rem;
-  color: var(--on-brand);
-}
-
 .logoText {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: -0.03em;
 }

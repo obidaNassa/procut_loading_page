@@ -28,19 +28,10 @@ export default function Navbar() {
         <nav className={styles.nav}>
           {/* Logo */}
           <a href="#" className={styles.logo} aria-label="ProCut Home">
-            <div className={styles.logoBadge}>
-              <span className={styles.logoIcon}>
-                <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true">
-                  <path d="M12 2C12 7.523 7.523 12 2 12C7.523 12 12 16.477 12 22C12 16.477 16.477 12 22 12C16.477 12 12 7.523 12 2Z" />
-                </svg>
-              </span>
-            </div>
-            <div className={styles.logoTextGroup}>
-              <span className={styles.logoText}>
-                <span className={styles.logoPro}>Pro</span>
-                <span className={styles.logoCut}>Cut</span>
-              </span>
-            </div>
+            <span className={styles.logoText}>
+              <span className={styles.logoPro}>Pro</span>
+              <span className={styles.logoCut}>Cut</span>
+            </span>
           </a>
 
           {/* Desktop links */}

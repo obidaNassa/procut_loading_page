@@ -27,11 +27,6 @@ export default function Footer() {
           {/* Brand */}
           <div className={styles.brand}>
             <a href="#" className={styles.logo} aria-label="ProCut Home">
-              <span className={styles.logoIcon}>
-                <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true">
-                  <path d="M12 2C12 7.523 7.523 12 2 12C7.523 12 12 16.477 12 22C12 16.477 16.477 12 22 12C16.477 12 12 7.523 12 2Z" />
-                </svg>
-              </span>
               <span className={styles.logoText}>
                 <span className={styles.logoPro}>Pro</span>
                 <span className={styles.logoCut}>Cut</span>
