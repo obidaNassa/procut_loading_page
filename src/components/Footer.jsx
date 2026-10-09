@@ -78,11 +78,11 @@ export default function Footer() {
               rel="noopener noreferrer"
             >
               <span className={styles.legalIcon}>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="4.5" r="2" />
-                  <path d="M10 9h3a2 2 0 0 1 2 2v2a1 1 0 0 0 2 0v-2a4 4 0 0 0-4-4h-3a2 2 0 0 0-2 2v5a1 1 0 0 0 2 0V9z" />
-                  <circle cx="10" cy="17" r="4" />
-                  <path d="M10 13v4l3 3" />
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <circle cx="17.5" cy="4.5" r="1.75" fill="currentColor" stroke="none" />
+                  <path d="M14.5 7.5L11 9.5l2.5 4.5h4.5v4" />
+                  <path d="M7 11.5a5 5 0 1 0 6.5 4.5" />
+                  <path d="M11 9.5L7.5 7" />
                 </svg>
               </span>
               <span>{t.footer.accessibility}</span>
