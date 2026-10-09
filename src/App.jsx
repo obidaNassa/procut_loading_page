@@ -10,6 +10,7 @@ import Testimonials from './components/Testimonials'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 import FloatingWhatsApp from './components/FloatingWhatsApp'
+import AccessibilityWidget from './components/AccessibilityWidget'
 
 function AppContent() {
   return (
@@ -25,6 +26,7 @@ function AppContent() {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <AccessibilityWidget />
     </div>
   )
 }

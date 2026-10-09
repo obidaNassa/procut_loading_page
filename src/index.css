@@ -539,3 +539,74 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   --shadow-glow: 0 0 40px rgba(20,184,166,0.12), 0 0 80px rgba(20,184,166,0.06);
 }
 
+/* ============================================================
+   ACCESSIBILITY (A11Y) LIVE MODIFIERS
+   ============================================================ */
+
+/* Text sizing */
+html[data-a11y-text="1"] { font-size: 18px !important; }
+html[data-a11y-text="2"] { font-size: 20px !important; }
+
+/* Contrast */
+html[data-a11y-contrast="high"] {
+  filter: contrast(135%) saturate(120%) !important;
+}
+
+html[data-a11y-contrast="invert"] {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+html[data-a11y-contrast="invert"] img,
+html[data-a11y-contrast="invert"] video,
+html[data-a11y-contrast="invert"] [role="dialog"],
+html[data-a11y-contrast="invert"] [aria-modal="true"] {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Color filters */
+html[data-a11y-filter="sepia"] {
+  filter: sepia(0.8) !important;
+}
+html[data-a11y-filter="grayscale"] {
+  filter: grayscale(1) !important;
+}
+
+/* Underline all links */
+html[data-a11y-underline="true"] a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
+
+/* Highlight headings */
+html[data-a11y-headings="true"] h1,
+html[data-a11y-headings="true"] h2,
+html[data-a11y-headings="true"] h3,
+html[data-a11y-headings="true"] h4,
+html[data-a11y-headings="true"] h5,
+html[data-a11y-headings="true"] h6 {
+  text-decoration: underline 3px var(--brand-1) !important;
+  background-color: rgba(var(--brand-1-rgb), 0.15) !important;
+  border-radius: 4px;
+  padding: 0 4px;
+}
+
+/* Big cursor */
+html[data-a11y-cursor="true"],
+html[data-a11y-cursor="true"] * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24' fill='%23c9a24b' stroke='%23000000' stroke-width='1.5'%3E%3Cpolygon points='3 3 10 21 13 13 21 10 3 3'/%3E%3C/svg%3E"), auto !important;
+}
+
+/* Pause animations */
+html[data-a11y-pause-anim="true"] *,
+html[data-a11y-pause-anim="true"] *::before,
+html[data-a11y-pause-anim="true"] *::after {
+  animation-duration: 0.001s !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001s !important;
+}
+
+/* Clear readable font */
+html[data-a11y-font="true"],
+html[data-a11y-font="true"] * {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
