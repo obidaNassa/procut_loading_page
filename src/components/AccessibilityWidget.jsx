@@ -403,21 +403,21 @@ export default function AccessibilityWidget() {
             </svg>
             <span>{t.a11y.reset}</span>
           </button>
-        </div>
 
-        {/* Footer info link */}
-        <div className={styles.footer}>
-          <p className={styles.footerText}>
-            {t.a11y.statementPre}
-            <a
-              href="https://procut.me/accessibility"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.statementLink}
-            >
-              {t.a11y.statementLink}
-            </a>
-          </p>
+          {/* Statement info link inside scrollable body */}
+          <div className={styles.statementBox}>
+            <p className={styles.footerText}>
+              {t.a11y.statementPre}
+              <a
+                href="https://procut.me/accessibility"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.statementLink}
+              >
+                {t.a11y.statementLink}
+              </a>
+            </p>
+          </div>
         </div>
       </aside>
     </>
