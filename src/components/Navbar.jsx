@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { useTheme } from '../context/ThemeContext'
 import styles from './Navbar.module.css'
@@ -8,12 +8,35 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false)
+  const langDropdownRef = useRef(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(e.target)) {
+        setLangDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('touchstart', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [])
+
+  const languages = [
+    { code: 'he', label: 'עברית' },
+    { code: 'ar', label: 'العربية' },
+    { code: 'en', label: 'English' },
+  ]
+  const currentLangLabel = languages.find(l => l.code === lang)?.label || 'עברית'
 
   const navLinks = [
     { label: t.nav.pricing, href: '#pricing' },
@@ -74,44 +97,69 @@ export default function Navbar() {
               )}
             </button>
 
-            {/* Language Selector */}
-            <div className={styles.langSelector} role="group" aria-label={t.nav.langSelect}>
+            {/* Language Switcher Pill Button + Dropdown */}
+            <div className={styles.langDropdownWrapper} ref={langDropdownRef}>
               <button
                 type="button"
-                className={`${styles.langBtn} ${lang === 'ar' ? styles.langActive : ''}`}
-                onClick={() => setLang('ar')}
-                title="العربية"
+                className={styles.langPillBtn}
+                onClick={() => setLangDropdownOpen(prev => !prev)}
+                aria-expanded={langDropdownOpen}
+                aria-label={t.nav.langSelect}
               >
-                عربي
+                <span className={styles.langPillText}>{currentLangLabel}</span>
+                <span className={styles.langPillGlobe}>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                </span>
               </button>
-              <span className={styles.langDivider}>|</span>
-              <button
-                type="button"
-                className={`${styles.langBtn} ${lang === 'he' ? styles.langActive : ''}`}
-                onClick={() => setLang('he')}
-                title="עברית"
-              >
-                עב
-              </button>
-              <span className={styles.langDivider}>|</span>
-              <button
-                type="button"
-                className={`${styles.langBtn} ${lang === 'en' ? styles.langActive : ''}`}
-                onClick={() => setLang('en')}
-                title="English"
-              >
-                EN
-              </button>
+
+              {langDropdownOpen && (
+                <div className={styles.langDropdownMenu} role="menu">
+                  {languages.map((item) => {
+                    const isActive = lang === item.code
+                    return (
+                      <button
+                        key={item.code}
+                        type="button"
+                        className={`${styles.langDropdownItem} ${isActive ? styles.langDropdownItemActive : ''}`}
+                        onClick={() => {
+                          setLang(item.code)
+                          setLangDropdownOpen(false)
+                        }}
+                        role="menuitem"
+                      >
+                        <span className={styles.langDropdownLabel}>{item.label}</span>
+                        {isActive && (
+                          <span className={styles.langCheckmark}>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                              <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                          </span>
+                        )}
+                      </button>
+                    )
+                  })}
+                </div>
+              )}
             </div>
 
-            {/* CTA */}
+            {/* Header CTA: Owner Login (כניסת בעלים) */}
             <a
-              href="#pricing"
+              href="https://procut.me/login"
               className={`btn btn-primary ${styles.navCta}`}
               id="nav-cta-btn"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <span>🎁</span>
-              <span>{t.nav.ctaBtn}</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ marginInlineEnd: 6 }}>
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                <polyline points="10 17 15 12 10 7" />
+                <line x1="15" y1="12" x2="3" y2="12" />
+              </svg>
+              <span>{t.nav.ownerLogin || 'כניסת בעלים'}</span>
             </a>
 
             {/* Mobile hamburger */}
