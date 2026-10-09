@@ -75,13 +75,22 @@ export default function AccessibilityWidget() {
     }
   }, [settings])
 
-  // Close on Escape key
+  // Close on Escape key and lock body scroll when open
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && isOpen) setIsOpen(false)
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow
+      document.body.style.overflow = 'hidden'
+      
+      const handleKeyDown = (e) => {
+        if (e.key === 'Escape') setIsOpen(false)
+      }
+      window.addEventListener('keydown', handleKeyDown)
+
+      return () => {
+        document.body.style.overflow = originalOverflow
+        window.removeEventListener('keydown', handleKeyDown)
+      }
     }
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [isOpen])
 
   const updateSetting = (key, value) => {
