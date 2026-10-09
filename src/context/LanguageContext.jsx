@@ -4,15 +4,15 @@ import { translations } from '../translations/translations'
 const LanguageContext = createContext()
 
 export function LanguageProvider({ children }) {
-  // Default to Hebrew as requested by user
+  // Default to Hebrew ('he') if user_lang is null or not found
   const [lang, setLang] = useState(() => {
-    return localStorage.getItem('procut_lang') || 'he'
+    return localStorage.getItem('user_lang') || 'he'
   })
 
   const t = translations[lang] || translations.he
 
   useEffect(() => {
-    localStorage.setItem('procut_lang', lang)
+    localStorage.setItem('user_lang', lang)
     document.documentElement.lang = lang
     document.documentElement.dir = t.dir
   }, [lang, t.dir])
