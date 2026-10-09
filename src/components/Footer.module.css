@@ -85,11 +85,49 @@
   color: var(--primary-400);
 }
 
+.legalBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+  padding: 26px 0;
+  border-bottom: 1px solid rgba(var(--overlay-rgb), 0.06);
+}
+
+.legalLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.legalIcon {
+  color: var(--brand-1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.legalLink:hover {
+  color: var(--text-heading);
+}
+
+.legalLink:hover .legalIcon {
+  transform: scale(1.15);
+}
+
 .bottomBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 28px;
+  padding-top: 24px;
   flex-wrap: wrap;
   gap: 12px;
 }

@@ -140,6 +140,20 @@ export default function Navbar() {
               </a>
             </li>
           ))}
+          <li className={styles.mobileActionItem}>
+            <a
+              href="https://procut.me/login"
+              className={`${styles.mobileLink} ${styles.mobileOwnerLogin}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ marginInlineEnd: 8 }}>
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                <polyline points="10 17 15 12 10 7" />
+                <line x1="15" y1="12" x2="3" y2="12" />
+              </svg>
+              <span>{t.nav.ownerLogin || 'כניסת בעלים'}</span>
+            </a>
+          </li>
         </ul>
       </div>
     </header>

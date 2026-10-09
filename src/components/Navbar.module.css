@@ -259,6 +259,22 @@
 
 .mobileActionItem {
   margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(var(--overlay-rgb), 0.08);
+}
+
+.mobileOwnerLogin {
+  display: flex;
+  align-items: center;
+  color: var(--brand-1) !important;
+  background: rgba(var(--brand-1-rgb), 0.08);
+  border: 1px solid rgba(var(--brand-1-rgb), 0.25);
+  font-weight: 700;
+}
+
+.mobileOwnerLogin:hover {
+  background: rgba(var(--brand-1-rgb), 0.16);
+  border-color: rgba(var(--brand-1-rgb), 0.45);
 }
 
 .mobileCta {
