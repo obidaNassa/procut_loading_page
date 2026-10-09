@@ -900,7 +900,7 @@ export const translations = {
       contactUs: 'تواصل معنا مباشرة',
       phone: '+972 52-533-6954',
       whatsapp: 'مراسلة عبر واتساب',
-      accessibility: 'إعلان إمكانية الوصول',
+      accessibility: 'تصريح إمكانية الوصول',
       privacy: 'سياسة الخصوصية',
       terms: 'شروط الاستخدام',
       copyright: 'جميع الحقوق محفوظة © ProCut.me 2026',
@@ -1358,7 +1358,7 @@ export const translations = {
       whatsapp: 'WhatsApp Message',
       accessibility: 'Accessibility Statement',
       privacy: 'Privacy Policy',
-      terms: 'Terms of Service',
+      terms: 'Terms of Use',
       copyright: 'All Rights Reserved © ProCut.me 2026',
     },
     floatingWhatsApp: {

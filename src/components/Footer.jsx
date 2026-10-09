@@ -12,6 +12,7 @@ export default function Footer() {
       { label: t.nav.pricing, href: '#pricing' },
       { label: t.nav.interactiveDemo, href: '#demo' },
       { label: t.nav.features, href: '#features' },
+      { label: t.nav.testimonials, href: '#testimonials' },
     ],
     contact: [
       { label: `WhatsApp: ${DISPLAY_PHONE}`, href: waUrl },
@@ -63,65 +64,61 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Legal links bar */}
-        <div className={styles.legalBar}>
-          <a
-            href="https://procut.me/accessibility"
-            className={styles.legalLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className={styles.legalIcon}>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <circle cx="12" cy="4.5" r="2" />
-                <path d="M10 9h3a2 2 0 0 1 2 2v2a1 1 0 0 0 2 0v-2a4 4 0 0 0-4-4h-3a2 2 0 0 0-2 2v5a1 1 0 0 0 2 0V9z" />
-                <circle cx="10" cy="17" r="4" />
-                <path d="M10 13v4l3 3" />
-              </svg>
-            </span>
-            <span>{t.footer.accessibility}</span>
-          </a>
-
-          <a
-            href="https://procut.me/privacy"
-            className={styles.legalLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className={styles.legalIcon}>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            </span>
-            <span>{t.footer.privacy}</span>
-          </a>
-
-          <a
-            href="https://procut.me/terms"
-            className={styles.legalLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className={styles.legalIcon}>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                <polyline points="14 2 14 8 20 8" />
-                <line x1="16" y1="13" x2="8" y2="13" />
-                <line x1="16" y1="17" x2="8" y2="17" />
-              </svg>
-            </span>
-            <span>{t.footer.terms}</span>
-          </a>
-        </div>
-
-        {/* Bottom bar */}
-        <div className={styles.bottomBar}>
+        {/* Bottom section with copyright above and legal links below */}
+        <div className={styles.bottomSection}>
           <p className={styles.copyright}>
             {t.footer.copyright}
           </p>
-          <p className={styles.madeWith}>
-            ProCut.me — Salon Booking & Management OS
-          </p>
+
+          <div className={styles.legalBar}>
+            <a
+              href="https://procut.me/accessibility"
+              className={styles.legalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={styles.legalIcon}>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="4.5" r="2" />
+                  <path d="M10 9h3a2 2 0 0 1 2 2v2a1 1 0 0 0 2 0v-2a4 4 0 0 0-4-4h-3a2 2 0 0 0-2 2v5a1 1 0 0 0 2 0V9z" />
+                  <circle cx="10" cy="17" r="4" />
+                  <path d="M10 13v4l3 3" />
+                </svg>
+              </span>
+              <span>{t.footer.accessibility}</span>
+            </a>
+
+            <a
+              href="https://procut.me/privacy"
+              className={styles.legalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={styles.legalIcon}>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </span>
+              <span>{t.footer.privacy}</span>
+            </a>
+
+            <a
+              href="https://procut.me/terms"
+              className={styles.legalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={styles.legalIcon}>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+              </span>
+              <span>{t.footer.terms}</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
